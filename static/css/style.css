@@ -24,3 +24,25 @@ body{
     height: 0px;
 }
 
+header{
+    color: #f0f0f0;
+    background-color: #0f0f0f;
+    font-size: 32px;
+}
+
+header h1{
+    margin-left: 8px;
+    display: inline-block;
+    font-family: 'Dancing Script', cursive;
+}
+
+#largenav{
+    float: right;
+    margin: 16px 16px 0px 0px;
+    font-size: 24px;
+}
+#largenav a{
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 24px;
+}
