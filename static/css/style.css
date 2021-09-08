@@ -46,3 +46,22 @@ header h1{
     text-decoration: none;
     margin-left: 24px;
 }
+
+footer{
+    background-color: #0f0f0f;
+    overflow: auto;
+}
+
+#footerbox{
+    float: right;
+    margin: 10px;
+}
+
+#footerbox a{
+    color: #f0f0f0;
+    font-size: 30px;
+}
+
+a i{
+    margin: 5px 10px;
+}
