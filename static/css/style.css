@@ -47,6 +47,10 @@ header h1{
     margin-left: 24px;
 }
 
+#largenav a:hover{
+    text-decoration: underline;
+}
+
 footer{
     background-color: #0f0f0f;
     overflow: auto;
