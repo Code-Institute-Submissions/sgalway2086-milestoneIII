@@ -6,3 +6,21 @@
     margin: 0;
     font-family: 'Kaisei Tokumin', serif;
 }
+
+body{
+    background-color: #f0f0f0;
+}
+
+.drop-bar{
+    display: none;
+}
+
+.drop-bar-option{
+    display: none;
+}
+
+#smallnav{
+    visibility: hidden;
+    height: 0px;
+}
+
