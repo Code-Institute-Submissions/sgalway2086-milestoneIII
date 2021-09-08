@@ -2,7 +2,7 @@
 {% block content %}
 <div id = "recipeDiv">
     {% for task in recipes %}
-        {{ task.title }}<br>
+        <h2>{{ task.title }}</h2>
         <img src = {{ task.image }}><br>
         {{ task.description }}<br>
         <ul>
