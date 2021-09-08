@@ -7,6 +7,7 @@ from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
 
+
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -27,3 +28,23 @@ if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+
+@app.route("/unpack_String")
+def unpack_String():
+    description = mongo.db.recipes.description.find()
+    finished = False
+    stringforchange = description
+    unpackedstring = []
+    while finished == False:
+        num1 = stringforchange.find('{space}')
+        num2 = num1 + 7
+        instruction = stringforchange[0:num1]
+        remove = stringforchange[0:num2]
+        unpackedstring.append(instruction)
+        print(unpackedstring)
+        stringforchange = stringforchange.replace(remove, "")
+        print(stringforchange)
+        if len(stringforchange) == 0:
+            return unpackedstring
+        else:
+            continue
