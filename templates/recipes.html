@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Delizie</title>
+</head>
+<body>
+    {% for task in recipes %}
+        {{ task.title }}<br>
+        {{ task.image }}><br>
+        {{ task.description }}<br>
+        {{ task.ingredients }}<br>
+        {{ task.steps }}<br>
+    {% endfor %}
+</body>
+</html>
