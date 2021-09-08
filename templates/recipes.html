@@ -4,7 +4,12 @@
         {{ task.title }}<br>
         <img src = {{ task.image }}><br>
         {{ task.description }}<br>
-        {{ task.ingredients }}<br>
-        {{ task.steps }}<br>
+        <ul>
+            <li>{{ task.ingredients }}</li><br>
+        </ul>
+        <ol>
+            <li>{{ task.steps }}</li><br>
+        </ol>
+        
     {% endfor %}
 {% endblock %} 
