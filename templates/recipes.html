@@ -9,7 +9,7 @@
 <body>
     {% for task in recipes %}
         {{ task.title }}<br>
-        {{ task.image }}><br>
+        <img src = {{ task.image }}><br>
         {{ task.description }}<br>
         {{ task.ingredients }}<br>
         {{ task.steps }}<br>
