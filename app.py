@@ -29,8 +29,6 @@ if __name__ == '__main__':
             debug=True)
 
 
-
-@app.route("/unpack_String")
 def unpack_String():
     description = mongo.db.recipes.description.find()
     finished = False
