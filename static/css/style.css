@@ -65,3 +65,14 @@ footer{
 a i{
     margin: 5px 10px;
 }
+
+#recipeDiv{
+    background-color: #e6e6e6;
+    width: 60%;
+    padding: 32px 48px;
+    margin: auto;
+}
+
+#recipeDiv img{
+    width: 100%;
+}

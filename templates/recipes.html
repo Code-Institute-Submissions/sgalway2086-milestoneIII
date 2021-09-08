@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div id = "recipeDiv">
     {% for task in recipes %}
         {{ task.title }}<br>
         <img src = {{ task.image }}><br>
@@ -10,6 +11,7 @@
         <ol>
             <li>{{ task.steps }}</li><br>
         </ol>
-        
+    
     {% endfor %}
+</div>
 {% endblock %} 
