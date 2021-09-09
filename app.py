@@ -20,19 +20,8 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes)
-
-
-if __name__ == '__main__':
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)
-
-
-def unpack_String():
-    description = mongo.db.recipes.description.find()
+    stringforchange = mongo.db.recipes.find_one()["steps"]
     finished = False
-    stringforchange = description
     unpackedstring = []
     while finished == False:
         num1 = stringforchange.find('{space}')
@@ -44,6 +33,12 @@ def unpack_String():
         stringforchange = stringforchange.replace(remove, "")
         print(stringforchange)
         if len(stringforchange) == 0:
-            return render_template("recipes.html", unpackedstring = unpackedstring)
+            return render_template("recipes.html", recipes=recipes,  
+            unpackedstring = unpackedstring)
         else:
             continue
+    
+if __name__ == '__main__':
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=True)
