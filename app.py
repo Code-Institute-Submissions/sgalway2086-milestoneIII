@@ -52,17 +52,21 @@ def get_recipes():
         else:
             continue
 
+
 @app.route("/home")
 def home():
-     return render_template("home.html")
+    recent1 = mongo.db.col.find().sort({"recipes": -1}).limit(1)
+    return render_template("home.html", recent1=recent1)
+
 
 @app.route("/submit")
 def submit():
-     return render_template("submit.html")
+    return render_template("submit.html")
+
 
 @app.route("/search")
 def search():
-     return render_template("search.html")
+    return render_template("search.html")
 
 
 if __name__ == '__main__':
