@@ -5,11 +5,13 @@
         <h2>{{ task.title }}</h2>
         <img src = {{ task.image }}><br>
         {{ task.description }}<br><br>
+        <h3>Ingredients</h3>
         <ul>
             {% for i in unpackedIngredientsString %}
                 <li>{{ i }}</li>
             {% endfor %}
         </ul><br>
+        <h3>Steps</h3>
         <ol>
             {% for j in unpackedStepsString %}
                 <li>{{ j }}</li>
