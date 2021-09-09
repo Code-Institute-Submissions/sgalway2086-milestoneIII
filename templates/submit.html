@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div id = "submitRecipe">
+    <form action="/app.py" method = "get">
+        <label for="title">Recipe Title:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="image">Add Image URL:</label><br>
+        <input type="text" id="image" name="image"><br>
+        <label for="description">Short description:</label><br>
+        <input type="text" id="description" name="description"><br>
+        <label for="ingredients">List of Ingredients:</label><br>
+        <input type="text" id="ingredients" name="ingredients"><br>
+        <button id = "addIngredient">Add</button><br>
+        <label for="steps">List of Steps:</label><br>
+        <input type="text" id="steps" name="steps"><br>
+        <button id = "addStep">Add</button><br>
+    </form>
+  </div>
+{% endblock %} 
