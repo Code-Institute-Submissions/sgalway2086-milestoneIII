@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -22,9 +22,9 @@ mongo = PyMongo(app)
 def get_recipes():
     recipes = mongo.db.recipes.find()
     stepsStringForChange = mongo.db.recipes.find_one()["steps"]
-    finished = False
+    stepsFinished = False
     unpackedStepsString = []
-    while finished == False:
+    while stepsFinished is False:
         num1 = stepsStringForChange.find('{space}')
         num2 = num1 + 7
         instruction = stepsStringForChange[0:num1]
@@ -32,17 +32,29 @@ def get_recipes():
         unpackedStepsString.append(instruction)
         stepsStringForChange = stepsStringForChange.replace(remove, "")
         if len(stepsStringForChange) == 0:
-            finished == True
+            stepsFinished = True
+        else:
+            continue
+    ingredientsStringChange = mongo.db.recipes.find_one()["ingredients"]
+    unpackedIngredientsString = []
+    ingredientsFinished = False
+    while ingredientsFinished is False:
+        num1 = ingredientsStringChange.find('{space}')
+        num2 = num1 + 7
+        instruction = ingredientsStringChange[0:num1]
+        remove = ingredientsStringChange[0:num2]
+        unpackedIngredientsString.append(instruction)
+        ingredientsStringChange = ingredientsStringChange.replace(remove, "")
+        if len(ingredientsStringChange) == 0:
+            ingredientsFinished = True
             return render_template("recipes.html", recipes=recipes,
-                unpackedStepsString = unpackedStepsString)
+            unpackedStepsString=unpackedStepsString,
+            unpackedIngredientsString=unpackedIngredientsString)
         else:
             continue
 
 
-
-    
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-

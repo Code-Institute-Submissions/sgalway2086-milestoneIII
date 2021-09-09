@@ -4,9 +4,9 @@
     {% for task in recipes %}
         <h2>{{ task.title }}</h2>
         <img src = {{ task.image }}><br>
-        {{ task.description }}<br>
+        {{ task.description }}<br><br>
         <ul>
-            {% for i in unpackedingredientsstring %}
+            {% for i in unpackedIngredientsString %}
                 <li>{{ i }}</li>
             {% endfor %}
         </ul><br>
