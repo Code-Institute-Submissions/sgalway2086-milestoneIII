@@ -86,3 +86,16 @@ a i{
         margin-left: 16px;
    }
 }
+
+@media screen and (max-width: 800px){
+    #mainDescription{
+        width: 80%;
+   }
+   #largenav{
+        visibility: hidden;
+        height: 0px;
+}
+    #smallnav{
+        visibility: visible;
+    }
+}
