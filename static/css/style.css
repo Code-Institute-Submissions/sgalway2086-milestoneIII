@@ -80,3 +80,9 @@ a i{
 #recipeDiv img{
     width: 100%;
 }
+
+@media screen and (max-width: 1000px){
+    nav a{
+        margin-left: 16px;
+   }
+}
