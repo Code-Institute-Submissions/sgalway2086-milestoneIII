@@ -6,10 +6,12 @@
         <img src = {{ task.image }}><br>
         {{ task.description }}<br>
         <ul>
-            <li>{{ task.ingredients }}</li><br>
-        </ul>
+            {% for i in unpackedingredientsstring %}
+                <li>{{ i }}</li>
+            {% endfor %}
+        </ul><br>
         <ol>
-            {% for j in unpackedstepsstring %}
+            {% for j in unpackedStepsString %}
                 <li>{{ j }}</li>
             {% endfor %}
         </ol>
