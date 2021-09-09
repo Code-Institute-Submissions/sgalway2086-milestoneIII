@@ -12,11 +12,16 @@
         </p>
 </div>
 <div id = recentAdditions>
-    <h2>Recent Additions</h2>
-    {% for task in recent1 %}
-        {{ task.title }}
-        <img src = {{ task.image }}>
-        {{ task.description }}
-    {% endfor %}
+    <h2>Recent Additions</h2><br>
+    <div class = "recentRecipes">
+        <h3>{{ recent1.title }}</h3>
+        <img src = {{ recent1.image }}>
+        {{ recent1.description }}
+    </div>
+    <div class = "recentRecipes">
+        <h3>{{ recent1.title }}</h3>
+        <img src = {{ recent1.image }}>
+        {{ recent1.description }}
+    </div>    
 </div>
 {% endblock %} 

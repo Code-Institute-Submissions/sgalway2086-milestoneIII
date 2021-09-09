@@ -56,7 +56,25 @@ header h1{
     width: 60%;
     padding: 32px 48px;
     margin: auto;
-} 
+}
+
+#recentAdditions{
+    background-color: #e6e6e6;
+    width: 60%;
+    padding: 32px 48px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.recentRecipes{
+    width: 50%;
+    float: left;
+}
+
+.recentRecipes img{
+    width: 100%;
+}
+
 
 footer{
     background-color: #0f0f0f;
