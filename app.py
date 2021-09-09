@@ -22,19 +22,19 @@ def get_recipes():
     recipes = mongo.db.recipes.find()
     stringforchange = mongo.db.recipes.find_one()["steps"]
     finished = False
-    unpackedstring = []
+    unpackedstepsstring = []
     while finished == False:
         num1 = stringforchange.find('{space}')
         num2 = num1 + 7
         instruction = stringforchange[0:num1]
         remove = stringforchange[0:num2]
-        unpackedstring.append(instruction)
-        print(unpackedstring)
+        unpackedstepsstring.append(instruction)
+        print(unpackedstepsstring)
         stringforchange = stringforchange.replace(remove, "")
         print(stringforchange)
         if len(stringforchange) == 0:
             return render_template("recipes.html", recipes=recipes,  
-            unpackedstring = unpackedstring)
+            unpackedstepsstring = unpackedstepsstring)
         else:
             continue
     
