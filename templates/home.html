@@ -13,5 +13,10 @@
 </div>
 <div id = recentAdditions>
     <h2>Recent Additions</h2>
+    {% for task in recent1 %}
+        {{ task.title }}
+        <img src = {{ task.image }}>
+        {{ task.description }}
+    {% endfor %}
 </div>
 {% endblock %} 

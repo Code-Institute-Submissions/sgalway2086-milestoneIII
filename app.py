@@ -55,7 +55,7 @@ def get_recipes():
 
 @app.route("/home")
 def home():
-    recent1 = mongo.db.col.find().sort({"recipes": -1}).limit(1)
+    recent1 = list(mongo.db.recipes.find())[-1]
     return render_template("home.html", recent1=recent1)
 
 
