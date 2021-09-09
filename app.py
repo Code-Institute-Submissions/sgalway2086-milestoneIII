@@ -16,7 +16,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
@@ -52,6 +51,18 @@ def get_recipes():
             unpackedIngredientsString=unpackedIngredientsString)
         else:
             continue
+
+@app.route("/home")
+def home():
+     return render_template("home.html")
+
+@app.route("/submit")
+def submit():
+     return render_template("submit.html")
+
+@app.route("/search")
+def search():
+     return render_template("search.html")
 
 
 if __name__ == '__main__':
