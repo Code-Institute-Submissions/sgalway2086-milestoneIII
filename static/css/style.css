@@ -98,7 +98,6 @@ a i{
     #smallnav{
         visibility: visible;
     }
-
     .drop-bar-button span{
         display:block;
     }
@@ -152,6 +151,10 @@ a i{
         margin: 0% 5%;
         width: 80%;
         padding: 5%
+    }
+    #mainDescription{
+        width: 80%;
+        padding: 2%;
     }
 }
 
