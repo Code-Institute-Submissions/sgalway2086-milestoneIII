@@ -90,12 +90,59 @@ a i{
 @media screen and (max-width: 800px){
     #mainDescription{
         width: 80%;
-   }
-   #largenav{
+    }
+    #largenav{
         visibility: hidden;
         height: 0px;
-}
+    }
     #smallnav{
         visibility: visible;
+    }
+
+    .drop-bar-button span{
+        display:block;
+    }
+    .drop-bar-option{
+        font-size: 24px;
+        padding: 10px 5px 0px 5px;
+        background-color: #f2f2f2;
+        visibility: hidden;
+    }
+    .drop-bar-button{
+        width: 50px;
+        font-size: 30px;
+        padding-left:10px;
+        position: absolute;
+        top: 9px;
+        right: 5px;
+        float: left;
+    }
+    .drop-bar-button i{
+        color: #fafafa;
+        margin-top: 16px;
+    }
+    span:hover .header-fa{
+        background-color:#ff1a1a;
+    }
+    .drop-bar-button:hover .drop-bar{
+        width: 170px;
+        height: 160px;
+        display: inline-block;
+    }
+    .drop-bar-button:hover .drop-bar-option{
+        width: 170px;
+        height: 40px;
+        display: block;
+        position: relative;
+        top:18px;
+        background-color: #0f0f0f;
+        right:141px;
+        float: left;
+        visibility: visible;
+        text-decoration: none;
+        color: #f0f0f0;
+    }
+    .drop-bar-option:hover{
+        background-color: #cccccc;
     }
 }
