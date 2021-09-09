@@ -9,13 +9,9 @@
             <li>{{ task.ingredients }}</li><br>
         </ul>
         <ol>
-            {% for i in ["hello", "this", "is", "a", "test"] %}
-            <li>
-                {% for j in testArray %}
-                    <ul>j</ul>
-                {% endfor %}
-            </li>
-        {% endfor %}
+            {% for j in unpackedstring %}
+                <li>{{ j }}</li>
+            {% endfor %}
         </ol>
     {% endfor %}
 </div>
