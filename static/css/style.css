@@ -75,6 +75,13 @@ header h1{
     width: 100%;
 }
 
+#recentAdditions a{
+    color: #0f0f0f;
+}
+
+.hoverRecentRecipe:hover{
+    text-decoration: underline;
+}
 
 footer{
     background-color: #0f0f0f;

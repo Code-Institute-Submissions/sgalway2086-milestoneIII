@@ -13,13 +13,15 @@
 </div>
 <div id = recentAdditions>
     <h2>Recent Additions</h2><br>
-    <div class = "recentRecipes">
-        <h3>{{ recent1.title }}</h3>
-        <img src = {{ recent1.image }}>
+    <a href="/recipes">
+        <div class = "recentRecipes">
+            <h3 class = "hoverRecentRecipe">{{ recent1.title }}</h3>
+            <img src = {{ recent1.image }}>
         {{ recent1.description }}
-    </div>
+        </div>
+    </a>
     <div class = "recentRecipes">
-        <h3>{{ recent1.title }}</h3>
+        <h3 class = "hoverRecentRecipe">{{ recent1.title }}</h3>
         <img src = {{ recent1.image }}>
         {{ recent1.description }}
     </div>    
