@@ -57,7 +57,8 @@ def get_recipes():
 @app.route("/home")
 def home():
     recent1 = list(mongo.db.recipes.find())[-1]
-    return render_template("home.html", recent1=recent1)
+    recent2 = list(mongo.db.recipes.find())[-2]
+    return render_template("home.html", recent1=recent1, recent2=recent2)
 
 
 @app.route("/submit")

@@ -20,10 +20,12 @@
         {{ recent1.description }}
         </div>
     </a>
-    <div class = "recentRecipes">
-        <h3 class = "hoverRecentRecipe">{{ recent1.title }}</h3>
-        <img src = {{ recent1.image }}>
-        {{ recent1.description }}
-    </div>    
+    <a href="/recipes">
+        <div class = "recentRecipes">
+             <h3 class = "hoverRecentRecipe">{{ recent2.title }}</h3>
+             <img src = {{ recent2.image }}>
+             {{ recent2.description }}
+        </div>   
+    </a> 
 </div>
 {% endblock %} 
