@@ -11,6 +11,21 @@ body{
     background-color: #f0f0f0;
 }
 
+.recentRecipes{
+    width: 50%;
+    float: left;
+}
+
+#rightRecentDiv{
+    width: 96%;
+    margin: 0px 0px 0px 2%;
+}
+
+#leftRecentDiv{
+    width: 96%;
+    margin: 0px 2%;
+}
+
 .drop-bar{
     display: none;
 }
@@ -56,6 +71,8 @@ header h1{
     width: 60%;
     padding: 32px 48px;
     margin: auto;
+    margin-bottom: 32px;
+    margin-top: 32px;
 }
 
 #recentAdditions{
@@ -64,11 +81,7 @@ header h1{
     padding: 32px 48px;
     margin: auto;
     overflow: hidden;
-}
-
-.recentRecipes{
-    width: 50%;
-    float: left;
+    margin-bottom: 32px;
 }
 
 .recentRecipes img{
@@ -175,6 +188,9 @@ a i{
     }
     .drop-bar-option:hover{
         background-color: #cccccc;
+    }
+    #recentAdditions{
+        width: 80%;
     }
 }
 

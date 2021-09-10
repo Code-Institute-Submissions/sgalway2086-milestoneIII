@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/recipes")
 @app.route("/get_recipes")
-def get_recipes():
+def get_recipes(data):
     recipes = mongo.db.recipes.find()
     stepsStringForChange = mongo.db.recipes.find_one()["steps"]
     stepsFinished = False

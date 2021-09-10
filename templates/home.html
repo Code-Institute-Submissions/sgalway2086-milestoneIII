@@ -13,19 +13,26 @@
 </div>
 <div id = recentAdditions>
     <h2>Recent Additions</h2><br>
-    <a href="/recipes">
-        <div class = "recentRecipes">
-            <h3 class = "hoverRecentRecipe">{{ recent1.title }}</h3>
-            <img src = {{ recent1.image }}>
-        {{ recent1.description }}
-        </div>
-    </a>
-    <a href="/recipes">
-        <div class = "recentRecipes">
-             <h3 class = "hoverRecentRecipe">{{ recent2.title }}</h3>
-             <img src = {{ recent2.image }}>
-             {{ recent2.description }}
-        </div>   
-    </a> 
+    <div id = "leftRecentDiv">
+        <a href="/recipes">
+            <div class = "recentRecipes">
+                <h3 class = "hoverRecentRecipe">{{ recent1.title }}</h3>
+                <img src = {{ recent1.image }}>
+            {{ recent1.description }}
+            </div>
+        </a>
+    </div>
+    <div id = "decipeDivider">
+    </div>
+    <div id = "rightRecentDiv">
+        <a href="/recipes">
+            <div class = "recentRecipes">
+                 <h3 class = "hoverRecentRecipe">{{ recent2.title }}</h3>
+                 <img src = {{ recent2.image }}>
+                 {{ recent2.description }}
+            </div>   
+        </a> 
+    </div>
+ 
 </div>
 {% endblock %} 
