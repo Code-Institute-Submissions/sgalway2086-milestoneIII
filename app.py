@@ -17,11 +17,18 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 @app.route("/")
-@app.route("/recipes")
-@app.route("/get_recipes")
-def get_recipes(data):
-    recipes = mongo.db.recipes.find()
-    stepsStringForChange = mongo.db.recipes.find_one()["steps"]
+@app.route("/home")
+def home():
+    recent1 = list(mongo.db.recipes.find())[-1]
+    recent2 = list(mongo.db.recipes.find())[-2]
+    return render_template("home.html", recent1=recent1, recent2=recent2)
+
+
+@app.route("/recipes/<recipe_id>")
+def get_recipes(recipe_id):
+    recipes = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    print(recipes)
+    stepsStringForChange = recipes.get("steps")
     stepsFinished = False
     unpackedStepsString = []
     while stepsFinished is False:
@@ -35,7 +42,7 @@ def get_recipes(data):
             stepsFinished = True
         else:
             continue
-    ingredientsStringChange = mongo.db.recipes.find_one()["ingredients"]
+    ingredientsStringChange = recipes.get("ingredients")
     unpackedIngredientsString = []
     ingredientsFinished = False
     while ingredientsFinished is False:
@@ -52,13 +59,6 @@ def get_recipes(data):
             unpackedIngredientsString=unpackedIngredientsString)
         else:
             continue
-
-
-@app.route("/home")
-def home():
-    recent1 = list(mongo.db.recipes.find())[-1]
-    recent2 = list(mongo.db.recipes.find())[-2]
-    return render_template("home.html", recent1=recent1, recent2=recent2)
 
 
 @app.route("/submit")

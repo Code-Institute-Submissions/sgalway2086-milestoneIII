@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div id = "recipeDiv">
-    {% for task in recipes %}
-        <h2>{{ task.title }}</h2>
-        <img src = {{ task.image }}><br>
-        {{ task.description }}<br><br>
+        <h2>{{ recipes.title }}</h2>
+        <img src = {{ recipes.image }}><br>
+        {{ recipes.description }}<br><br>
         <h3>Ingredients</h3>
         <ul>
             {% for i in unpackedIngredientsString %}
@@ -17,6 +16,5 @@
                 <li>{{ j }}</li>
             {% endfor %}
         </ol>
-    {% endfor %}
 </div>
 {% endblock %} 
