@@ -71,15 +71,8 @@ def random_recipe():
     totalRecipes -= 1
     randomRecipe = random.randint(0,totalRecipes)
     numberOnDb = list(mongo.db.recipes.find())[randomRecipe]
-    idOfDB = numberOnDb.get('_id')
-    print(idOfDB)
-    print(idOfDB)
-    print(idOfDB)
-    print(idOfDB)
-    print(idOfDB)
-    print(idOfDB)
-    print(idOfDB)
-    get_recipes(idOfDB)
+    numberOnDb = numberOnDb.get('_id')
+    return get_recipes(numberOnDb)
 
 
 @app.route("/submit")
