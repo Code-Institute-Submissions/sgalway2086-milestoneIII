@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div id = "recipeDiv">
+        <h2>{{ recipes.title }}</h2>
+        <img src = {{ recipes.image }}><br>
+        {{ recipes.description }}<br><br>
+        <h3>Ingredients</h3>
+        <ul>
+            {% for i in unpackedIngredientsString %}
+                <li>{{ i }}</li>
+            {% endfor %}
+        </ul><br>
+        <h3>Steps</h3>
+        <ol>
+            {% for j in unpackedStepsString %}
+                <li>{{ j }}</li>
+            {% endfor %}
+        </ol>
+</div>
+{% endblock %} 
