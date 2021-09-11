@@ -1,4 +1,5 @@
 import os
+import random
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -26,8 +27,12 @@ def home():
 
 @app.route("/recipes/<recipe_id>")
 def get_recipes(recipe_id):
+    print(recipe_id)
+    print(recipe_id)
+    print(recipe_id)
+    print(recipe_id)
+    print(recipe_id)
     recipes = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    print(recipes)
     stepsStringForChange = recipes.get("steps")
     stepsFinished = False
     unpackedStepsString = []
@@ -59,6 +64,22 @@ def get_recipes(recipe_id):
             unpackedIngredientsString=unpackedIngredientsString)
         else:
             continue
+
+@app.route("/randomrecipe")
+def random_recipe():
+    totalRecipes = mongo.db.recipes.count_documents({})
+    totalRecipes -= 1
+    randomRecipe = random.randint(0,totalRecipes)
+    numberOnDb = list(mongo.db.recipes.find())[randomRecipe]
+    idOfDB = numberOnDb.get('_id')
+    print(idOfDB)
+    print(idOfDB)
+    print(idOfDB)
+    print(idOfDB)
+    print(idOfDB)
+    print(idOfDB)
+    print(idOfDB)
+    get_recipes(idOfDB)
 
 
 @app.route("/submit")
