@@ -27,11 +27,6 @@ def home():
 
 @app.route("/recipes/<recipe_id>")
 def get_recipes(recipe_id):
-    print(recipe_id)
-    print(recipe_id)
-    print(recipe_id)
-    print(recipe_id)
-    print(recipe_id)
     recipes = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     stepsStringForChange = recipes.get("steps")
     stepsFinished = False
@@ -65,11 +60,12 @@ def get_recipes(recipe_id):
         else:
             continue
 
+
 @app.route("/randomrecipe")
 def random_recipe():
     totalRecipes = mongo.db.recipes.count_documents({})
     totalRecipes -= 1
-    randomRecipe = random.randint(0,totalRecipes)
+    randomRecipe = random.randint(0, totalRecipes)
     numberOnDb = list(mongo.db.recipes.find())[randomRecipe]
     numberOnDb = numberOnDb.get('_id')
     return get_recipes(numberOnDb)
