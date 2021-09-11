@@ -2,7 +2,7 @@ import os
 import random
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for)
+    redirect, request, session, request, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -85,3 +85,9 @@ if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+
+
+@app.route('/searchresult', methods=['POST'])
+def search_results():
+    search = request.form['text']
+    return render_template("searchresult.html", search=search)

@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <div>
-    <input type = "text" id = "mainSearch">
-    <a href="/searchresults"><button id = "searchButton">Search!</button></a>
+    <form method = "POST">
+        <input name = "text" id = "mainSearch">
+        <input type = submit id = "searchButton">
+    </form>
     <a href="/randomrecipe"><button id = "randomRecipe">Random recipe</button></a>
 </div>
 {% endblock %} 
