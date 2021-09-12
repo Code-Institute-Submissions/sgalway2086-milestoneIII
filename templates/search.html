@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div>
-    <form method="POST" action="/SearchRecipeFunction">
+    <form method="POST" action="/searchresult/{{search}}">
         <input id="user_input" type="text" name="search_Query" value="{{ search }}">
         <input id="search_submit" type="submit" value="Submit">
     </form>   

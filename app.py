@@ -87,16 +87,9 @@ if __name__ == '__main__':
             debug=True)
 
 
-@app.route('/SearchRecipeFunction', methods=['POST', 'GET'])
+@app.route('/searchresult', methods=['POST', 'GET'])
 def search_Recipes():
-    print("TEST")
-    print("TEST")
-    print("TEST")
-    print("TEST")
-    print("TEST")
-    print("TEST")
-    print("TEST")
     if request.method == 'POST':
         search = request.form['search_Query']
         return search
-    return render_template('searchresult.html')
+    return render_template('searchresult.html', search=search)
