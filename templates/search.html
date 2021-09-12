@@ -2,9 +2,9 @@
 {% block content %}
 <div>
     <form method="POST" action="/SearchRecipeFunction">
-        <input id="user_input" type="text" name="search_Query" value="{{ email }}">
+        <input id="user_input" type="text" name="search_Query" value="{{ search }}">
         <input id="search_submit" type="submit" value="Submit">
-      </form>      
+    </form>   
     <a href="/randomrecipe"><button id = "randomRecipe">Random recipe</button></a>
 </div>
 {% endblock %} 
