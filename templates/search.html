@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <div>
-    <form method = "POST">
-        <input name = "text" id = "mainSearch">
-        <input type = submit id = "searchButton">
-    </form>
+    <form method="POST" action="/SearchRecipeFunction">
+        <input id="user_input" type="text" name="search_Query" value="{{ email }}">
+        <input id="search_submit" type="submit" value="Submit">
+      </form>      
     <a href="/randomrecipe"><button id = "randomRecipe">Random recipe</button></a>
 </div>
 {% endblock %} 
