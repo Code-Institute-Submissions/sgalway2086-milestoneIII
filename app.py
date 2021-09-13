@@ -70,20 +70,25 @@ def random_recipe():
     return get_recipes(numberOnDb)
 
 
+stepsArray= []
+@app.route('/addStepToSite', methods=['GET', 'POST'])
+def step_Add():
+    if request.method == 'POST':
+           stepsArray.append(request.form['steps'])
+    return render_template('submit.html', stepsArray=stepsArray)
+
+
 @app.route("/submit", methods=['POST', 'GET'])
 def submit():
+    data = {}
     if request.method == "POST":
-        title=request.form["title"]
-        image=request.form["image"]
-        description=request.form["description"]
-        ingredients=request.form["ingredients"]
-        steps=request.form["steps"]
+        data['title']=request.form["title"]
+        data['image']=request.form["image"]
+        data['description']=request.form["description"]
+        data['ingredients']=request.form["ingredients"]
+        data['steps']=request.form["steps"]
+        mongo.db.recipes.insert_one(data)
     return render_template("submit.html")
-
-
-@app.route('/submitRecipe')
-def add_Recipe():
-    print("test")
 
 
 @app.route("/search", methods=['POST', 'GET'])

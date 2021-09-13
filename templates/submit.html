@@ -2,7 +2,8 @@
 {% block content %}
 <div id = "submitRecipe">
   <h2>Add your recipe here:</h2><br>
-    <form action="submitRecipe" method = "get">
+  <form action="/addStepToSite" id = "add_Step_Form" method = "POST"></form>
+    <form action="/submit" method = "POST">
         <label for="title">Recipe Title:</label><br>
         <input type="text" id="title" name="title"><br><br>
         <label for="image">Add Image URL:</label><br>
@@ -12,10 +13,16 @@
         <label for="ingredients">List of Ingredients:</label><br>
         <input type="text" id="ingredients" name="ingredients"><br>
         <button id = "addIngredient">Add</button><br><br>
+
+        <ol>{% for stepsArray in stepsArray %}
+            <li>{{ stepsArray }}</li>
+        {% endfor %}</ol>
+
         <label for="steps">List of Steps:</label><br>
-        <input type="text" id="steps" name="steps"><br>
-        <button id = "addStep">Add</button><br><br>
-        <a id = "mainSubmit" href="/submitRecipe">Add recipe</a>
+        <input type="text" id="steps" name="steps" form = "add_Step_Form"><br>
+        <input id="add_Step" type="submit" value="Add" form = "add_Step_Form"><br>
+
+        <input type="submit" value="Add Recipe">
     </form>
   </div>
 {% endblock %} 
