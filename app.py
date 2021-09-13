@@ -70,7 +70,7 @@ def random_recipe():
     return get_recipes(numberOnDb)
 
 
-@app.route("/submit", methods=['POST', 'GET']))
+@app.route("/submit", methods=['POST', 'GET'])
 def submit():
     if request.method == "POST":
         title=request.form["title"]
@@ -81,9 +81,9 @@ def submit():
     return render_template("submit.html")
 
 
-@app.route("/searchresult")
-def search_Result():
-    return render_template("searchresult.html")
+@app.route('/submitRecipe')
+def add_Recipe():
+    print("test")
 
 
 @app.route("/search", methods=['POST', 'GET'])
@@ -104,10 +104,5 @@ if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
-
-@app.route('/submitRecipe')
-def add_Recipe():
-    print("test")
 
 
