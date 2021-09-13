@@ -78,6 +78,14 @@ def step_Add():
     return render_template('submit.html', stepsArray=stepsArray)
 
 
+ingredientsArray= []
+@app.route('/addIngredientToSite', methods=['GET', 'POST'])
+def ingredient_Add():
+    if request.method == 'POST':
+           ingredientsArray.append(request.form['ingredients'])
+    return render_template('submit.html', ingredientsArray=ingredientsArray)
+
+
 @app.route("/submit", methods=['POST', 'GET'])
 def submit():
     data = {}
