@@ -19,6 +19,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
+    ingredientsArray= []
+    stepsArray= []
     recent1 = list(mongo.db.recipes.find())[-1]
     recent2 = list(mongo.db.recipes.find())[-2]
     return render_template("home.html", recent1=recent1, recent2=recent2)
@@ -75,7 +77,8 @@ stepsArray= []
 def step_Add():
     if request.method == 'POST':
            stepsArray.append(request.form['steps'])
-    return render_template('submit.html', stepsArray=stepsArray)
+    return render_template('submit.html', stepsArray=stepsArray,
+                            ingredientsArray=ingredientsArray)
 
 
 ingredientsArray= []
@@ -83,25 +86,41 @@ ingredientsArray= []
 def ingredient_Add():
     if request.method == 'POST':
            ingredientsArray.append(request.form['ingredients'])
-    return render_template('submit.html', ingredientsArray=ingredientsArray)
+    return render_template('submit.html', ingredientsArray=ingredientsArray,stepsArray=stepsArray)
 
 
 @app.route("/submit", methods=['POST', 'GET'])
 def submit():
     data = {}
+    global stepsArray
+    global ingredientsArray
     if request.method == "POST":
+        stepsdatabase = ''
+        for i in stepsArray:
+            stepsdatabase += i + "{space}"
+        print(stepsdatabase)
+        ingredientsDataBase = ''
+        for i in ingredientsArray:
+            ingredientsDataBase += i + "{space}"
+        print(ingredientsDataBase)
         data['title']=request.form["title"]
         data['image']=request.form["image"]
         data['description']=request.form["description"]
-        data['ingredients']=request.form["ingredients"]
-        data['steps']=request.form["steps"]
+        data['ingredients']=ingredientsDataBase
+        data['steps']=stepsdatabase
+        ingredientsArray= []
+        stepsArray= []
         mongo.db.recipes.insert_one(data)
+    ingredientsArray= []
+    stepsArray= []
     return render_template("submit.html")
 
 
 @app.route("/search", methods=['POST', 'GET'])
 def search():
     if request.method == 'POST':
+        ingredientsArray= []
+        stepsArray= []
         search =request.form["search_Query"]
         return redirect(url_for('searchresult', search=search))
     return render_template("search.html")
