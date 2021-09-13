@@ -1,8 +1,7 @@
 import os
 import random
 from flask import (
-    Flask, flash, render_template,
-    redirect, request, session, request, url_for)
+    Flask, flash, render_template, redirect, request, session, request, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -76,9 +75,23 @@ def submit():
     return render_template("submit.html")
 
 
-@app.route("/search")
+@app.route("/searchresult")
+def search_Result():
+    return render_template("searchresult.html")
+
+
+@app.route("/search", methods=['POST', 'GET'])
 def search():
+    if request.method == 'POST':
+        search = request.form["search_Query"]
+        return redirect(url_for('searchresult', search=search))
     return render_template("search.html")
+
+
+@app.route('/searchresult', methods=['POST', 'GET'])
+def search_Recipes():
+    search=request.form.get('search_Query')
+    return render_template('searchresult.html', search=search)
 
 
 if __name__ == '__main__':
@@ -87,10 +100,8 @@ if __name__ == '__main__':
             debug=True)
 
 
-@app.route('/searchresult', methods=['POST', 'GET'])
-def search_Recipes():
-    debug = True
-    if request.method == 'POST':
-        search = request.form['search_Query']
-        return search
-    return render_template('searchresult.html', search=search)
+@app.route('/submitRecipe')
+def add_Recipe():
+    print("test")
+
+

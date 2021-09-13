@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <div>
-    <form method="POST" action="/searchresult/{{search}}">
-        <input id="user_input" type="text" name="search_Query" value="{{ search }}">
+    <form action="searchresult" method="POST">
+        <input id="user_input" type="text" name="search_Query" value="" required>
         <input id="search_submit" type="submit" value="Submit">
     </form>   
     <a href="/randomrecipe"><button id = "randomRecipe">Random recipe</button></a>
