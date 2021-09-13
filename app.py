@@ -70,8 +70,14 @@ def random_recipe():
     return get_recipes(numberOnDb)
 
 
-@app.route("/submit")
+@app.route("/submit", methods=['POST', 'GET']))
 def submit():
+    if request.method == "POST":
+        title=request.form["title"]
+        image=request.form["image"]
+        description=request.form["description"]
+        ingredients=request.form["ingredients"]
+        steps=request.form["steps"]
     return render_template("submit.html")
 
 
@@ -83,7 +89,7 @@ def search_Result():
 @app.route("/search", methods=['POST', 'GET'])
 def search():
     if request.method == 'POST':
-        search = request.form["search_Query"]
+        search =request.form["search_Query"]
         return redirect(url_for('searchresult', search=search))
     return render_template("search.html")
 
