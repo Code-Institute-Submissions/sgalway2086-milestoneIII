@@ -92,11 +92,14 @@ def add_Step_Or_Ingredient():
         shortDescription = request.form.get("description")
         global url
         url = request.form.get("image")
-        if testIngredients != None:
+        if len(testIngredients ) >= 1:
+            print(testIngredients)
             ingredientsArray.append(request.form['ingredients'])
             return reRenderSubmit()
-        elif testSteps != None:
+        elif len(testSteps) >= 1:
             stepArray.append(request.form['steps'])
+            return reRenderSubmit()
+        else:
             return reRenderSubmit()
 
 
@@ -117,9 +120,9 @@ def submit():
         for i in ingredientsArray:
             ingredientsDataBase += i + "{space}"
         print(ingredientsDataBase)
-        data['title']=request.form["title"]
-        data['image']=request.form["image"]
-        data['description']=request.form["description"]
+        data['title']=recipeTitle
+        data['image']=url
+        data['description']=shortDescription
         data['ingredients']=ingredientsDataBase
         data['steps']=stepsdatabase
         ingredientsArray= []

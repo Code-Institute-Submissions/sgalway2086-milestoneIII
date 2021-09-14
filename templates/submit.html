@@ -22,7 +22,8 @@
         <div>
         <ol>{% for stepArray in stepArray %}
             <li>{{ stepArray }}</li>
-        {% endfor %}</ol>
+            {% endfor %}
+        </ol>
         <label for="steps">Steps:</label><br>
         <input type="text" id="steps" name="steps" form = "add_Info_Form"><br>
         <input id="add_Step" type="submit" value="Add" form = "add_Info_Form"><br><br>
