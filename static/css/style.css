@@ -135,6 +135,15 @@ a i{
     margin-top: 32px;
 }
 
+#searchPage{
+    background-color: #e6e6e6;
+    width: 60%;
+    padding: 32px 48px;
+    margin: auto;
+    margin-bottom: 32px;
+    margin-top: 32px;
+}
+
 #mainSubmit{
     font-size: 20px;
     display: block;

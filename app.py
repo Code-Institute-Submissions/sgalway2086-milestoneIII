@@ -152,13 +152,7 @@ def search_Recipes():
         search = search.lower()
         title = title.lower()
         if search in title:
-            print("TEST RESULT")
-            print("TEST RESULT")
-            print("TEST RESULT")
-            print("TEST RESULT")
-            print("TEST RESULT")
-            print("TEST RESULT")
-            print("TEST RESULT")
+            print("test")
         i += 1
     return render_template('search.html', search=search)
 
