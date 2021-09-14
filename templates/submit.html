@@ -17,7 +17,7 @@
           </ul>
         <label for="ingredients">Ingredients:</label><br>
         <input type="text" id="ingredients" name="ingredients" form = "add_Info_Form"><br>
-        <input id="add_Ingredient" type="submit" value="Add" form = "add_Info_Form"><br>
+        <input id="add_Ingredient" type = "submit" name = "submit" value="Add Ingredient" form = "add_Info_Form"><br>
         </div>
         <div>
         <ol>{% for stepArray in stepArray %}
@@ -26,9 +26,9 @@
         </ol>
         <label for="steps">Steps:</label><br>
         <input type="text" id="steps" name="steps" form = "add_Info_Form"><br>
-        <input id="add_Step" type="submit" value="Add" form = "add_Info_Form"><br><br>
+        <input id="add_Step" type = "submit" name="submit" value="Add Step" form = "add_Info_Form"><br><br>
         </div>
         <input type="submit" value="Add Recipe">
     </form>
   </div>
-{% endblock %} 
+{% endblock %}

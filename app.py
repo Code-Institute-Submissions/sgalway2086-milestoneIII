@@ -92,18 +92,14 @@ def add_Step_Or_Ingredient():
         shortDescription = request.form.get("description")
         global url
         url = request.form.get("image")
-        if len(testIngredients ) >= 1:
-            print(testIngredients)
+        if request.form['submit'] == 'Add Ingredient' and len(testIngredients) >= 1:
             ingredientsArray.append(request.form['ingredients'])
             return reRenderSubmit()
-        elif len(testSteps) >= 1:
+        elif request.form['submit'] == 'Add Step' or len(testSteps) >= 1:
             stepArray.append(request.form['steps'])
             return reRenderSubmit()
         else:
             return reRenderSubmit()
-
-
-
 
 
 @app.route("/submit", methods=['POST', 'GET'])
