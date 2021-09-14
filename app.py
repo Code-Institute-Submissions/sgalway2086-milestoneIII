@@ -142,11 +142,25 @@ def search():
 
 @app.route('/searchresult', methods=['POST', 'GET'])
 def search_Recipes():
-    search=request.form.get('search_Query')
+    search = request.form.get('search_Query')
     count = mongo.db.recipes.find().count()
     i = 0
+    recipeSearchTracker = []
     while i < count:
-        return render_template('search.html', search=search)
+        currentRecipeToCheck = list(mongo.db.recipes.find())[i]
+        title = currentRecipeToCheck["title"]
+        search = search.lower()
+        title = title.lower()
+        if search in title:
+            print("TEST RESULT")
+            print("TEST RESULT")
+            print("TEST RESULT")
+            print("TEST RESULT")
+            print("TEST RESULT")
+            print("TEST RESULT")
+            print("TEST RESULT")
+        i += 1
+    return render_template('search.html', search=search)
 
 
 if __name__ == '__main__':
