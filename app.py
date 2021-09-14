@@ -77,8 +77,14 @@ stepsArray= []
 def step_Add():
     if request.method == 'POST':
            stepsArray.append(request.form['steps'])
+           recipeTitle = request.form.get("title")
+           url = request.form.get("image")
+           shortDescription = request.form.get("description")
     return render_template('submit.html', stepsArray=stepsArray,
-                            ingredientsArray=ingredientsArray)
+                            ingredientsArray=ingredientsArray,
+                            shortDescription=shortDescription,
+                            recipeTitle=recipeTitle,
+                            url=url)
 
 
 ingredientsArray= []
