@@ -77,6 +77,7 @@ def reRenderSubmit():
         recipeTitle=recipeTitle, url=url, shortDescription=shortDescription,
         ingredientsArray=ingredientsArray)
 
+
 ingredientsArray = []
 stepArray = []
 @app.route('/addInfoToSite', methods=['GET','POST'])
@@ -142,12 +143,13 @@ def search():
 @app.route('/searchresult', methods=['POST', 'GET'])
 def search_Recipes():
     search=request.form.get('search_Query')
-    return render_template('searchresult.html', search=search)
+    count = mongo.db.recipes.find().count()
+    i = 0
+    while i < count:
+        return render_template('search.html', search=search)
 
 
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
-
