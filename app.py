@@ -132,12 +132,13 @@ def submit():
 
 @app.route("/search", methods=['POST', 'GET'])
 def search():
+    counter = 0
     if request.method == 'POST':
         ingredientsArray= []
         stepArray= []
         search =request.form["search_Query"]
         return redirect(url_for('searchresult', search=search))
-    return render_template("search.html")
+    return render_template("search.html", counter=counter)
 
 
 @app.route('/searchresult', methods=['POST', 'GET'])
@@ -147,14 +148,27 @@ def search_Recipes():
     i = 0
     recipeSearchTracker = []
     while i < count:
-        currentRecipeToCheck = list(mongo.db.recipes.find())[i]
-        title = currentRecipeToCheck["title"]
+        currentRecipe = list(mongo.db.recipes.find())[i]
+        title = currentRecipe["title"]
         search = search.lower()
         title = title.lower()
+        titleArray = []
+        imageArray = []
+        counter = 0
+        descriptionArray = []
+        anchorUrl = []
         if search in title:
-            print("test")
+            print(title)
+            titleArray.append(currentRecipe["title"])
+            imageArray.append(currentRecipe["image"])
+            descriptionArray.append(currentRecipe["description"])
+            anchorUrl.append(currentRecipe["_id"])
+            counter += 1
         i += 1
-    return render_template('search.html', search=search)
+    return render_template('search.html', search=search,
+    currentRecipe=currentRecipe, titleArray=titleArray,
+    imageArray=imageArray, descriptionArray=descriptionArray,
+    anchorUrl=anchorUrl, counter=counter)
 
 
 if __name__ == '__main__':

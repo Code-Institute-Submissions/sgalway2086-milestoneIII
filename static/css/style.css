@@ -150,6 +150,15 @@ a i{
     text-align: center;
 }
 
+.resultRecipe{
+    padding: 24px;
+    width: 50%;
+}
+
+.resultRecipe img{
+    width: 100%;
+}
+
 @media screen and (max-width: 1000px){
     nav a{
         margin-left: 16px;

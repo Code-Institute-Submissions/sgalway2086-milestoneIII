@@ -6,5 +6,15 @@
         <input id="search_submit" type="submit" value="Submit">
     </form>   
     <a href="/randomrecipe"><button id = "randomRecipe">Random recipe</button></a>
+
+    {% for i in range(counter) %}
+    <div class = "resultRecipe"><a href="/recipes/{{ anchorUrl[i] }}">
+        {{ titleArray[i] }}
+        <img src = {{ imageArray[i] }}>
+        {{ descriptionArray[i] }}
+    </a>
+    {% endfor %}
+    </div>
 </div>
+
 {% endblock %} 
