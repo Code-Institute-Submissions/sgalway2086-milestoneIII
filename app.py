@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     ingredientsArray= []
-    stepsArray= []
+    stepArray= []
     recent1 = list(mongo.db.recipes.find())[-1]
     recent2 = list(mongo.db.recipes.find())[-2]
     return render_template("home.html", recent1=recent1, recent2=recent2)
@@ -109,11 +109,11 @@ def add_Step_Or_Ingredient():
 @app.route("/submit", methods=['POST', 'GET'])
 def submit():
     data = {}
-    global stepsArray
+    global stepArray
     global ingredientsArray
     if request.method == "POST":
         stepsdatabase = ''
-        for i in stepsArray:
+        for i in stepArray:
             stepsdatabase += i + "{space}"
         print(stepsdatabase)
         ingredientsDataBase = ''
@@ -126,10 +126,10 @@ def submit():
         data['ingredients']=ingredientsDataBase
         data['steps']=stepsdatabase
         ingredientsArray= []
-        stepsArray= []
+        stepArray= []
         mongo.db.recipes.insert_one(data)
     ingredientsArray= []
-    stepsArray= []
+    stepArray= []
     return render_template("submit.html")
 
 
@@ -137,7 +137,7 @@ def submit():
 def search():
     if request.method == 'POST':
         ingredientsArray= []
-        stepsArray= []
+        stepArray= []
         search =request.form["search_Query"]
         return redirect(url_for('searchresult', search=search))
     return render_template("search.html")
