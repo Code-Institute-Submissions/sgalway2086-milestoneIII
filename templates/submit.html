@@ -2,31 +2,30 @@
 {% block content %}
 <div id = "submitRecipe">
   <h2>Add your recipe here:</h2><br>
-  <form action="/addStepToSite" id = "add_Step_Form" method = "POST"></form>
-  <form action="/addIngredientToSite" id = "add_Ingredient_Form" method = "POST"></form>
+  <form action="/addInfoToSite" id = "add_Info_Form" method = "POST"></form>
   <form action="/submit" method = "POST">
       <label for="title">Recipe Title:</label><br>
-      <input type="text" id="title" name="title" value = "{{ recipeTitle }}"><br><br>
+      <input type="text" id="title" name="title" value = "{{ recipeTitle }}" form = "add_Info_Form"><br><br>
       <label for="image">Add Image URL:</label><br>
-      <input type="text" id="image" name="image" value = "{{ url }}"><br><br>
+      <input type="text" id="image" name="image" value = "{{ url }}" form = "add_Info_Form"><br><br>
       <label for="description">Short description:</label><br>
-      <input type="text" id="description" name="description" value = "{{ shortDescription }}"><br><br>
+      <input type="text" id="description" name="description" value = "{{ shortDescription }}" form = "add_Info_Form"><br><br>
       <div>
           <ul>{% for ingredientsArray in ingredientsArray %}
               <li>{{ ingredientsArray }}</li>
               {% endfor %}
           </ul>
         <label for="ingredients">Ingredients:</label><br>
-        <input type="text" id="ingredients" name="ingredients" form = "add_Ingredient_Form"><br>
-        <input id="add_Ingredient" type="submit" value="Add" form = "add_Ingredient_Form"><br>
+        <input type="text" id="ingredients" name="ingredients" form = "add_Info_Form"><br>
+        <input id="add_Ingredient" type="submit" value="Add" form = "add_Info_Form"><br>
         </div>
         <div>
-        <ol>{% for stepsArray in stepsArray %}
-            <li>{{ stepsArray }}</li>
+        <ol>{% for stepArray in stepArray %}
+            <li>{{ stepArray }}</li>
         {% endfor %}</ol>
         <label for="steps">Steps:</label><br>
-        <input type="text" id="steps" name="steps" form = "add_Step_Form"><br>
-        <input id="add_Step" type="submit" value="Add" form = "add_Step_Form"><br><br>
+        <input type="text" id="steps" name="steps" form = "add_Info_Form"><br>
+        <input id="add_Step" type="submit" value="Add" form = "add_Info_Form"><br><br>
         </div>
         <input type="submit" value="Add Recipe">
     </form>

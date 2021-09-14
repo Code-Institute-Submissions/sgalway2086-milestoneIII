@@ -72,27 +72,35 @@ def random_recipe():
     return get_recipes(numberOnDb)
 
 
-stepsArray= []
-@app.route('/addStepToSite', methods=['GET', 'POST'])
-def step_Add():
-    if request.method == 'POST':
-           stepsArray.append(request.form['steps'])
-           recipeTitle = request.form.get("title")
-           url = request.form.get("image")
-           shortDescription = request.form.get("description")
-    return render_template('submit.html', stepsArray=stepsArray,
-                            ingredientsArray=ingredientsArray,
-                            shortDescription=shortDescription,
-                            recipeTitle=recipeTitle,
-                            url=url)
+def reRenderSubmit():
+    return render_template('submit.html', stepArray=stepArray,
+        recipeTitle=recipeTitle, url=url, shortDescription=shortDescription,
+        ingredientsArray=ingredientsArray)
+
+ingredientsArray = []
+stepArray = []
+@app.route('/addInfoToSite', methods=['GET','POST'])
+def add_Step_Or_Ingredient():
+    if request.method == "POST":
+        global testIngredients
+        testIngredients=request.form.get("ingredients")
+        global testSteps
+        testSteps = request.form.get("steps")
+        global recipeTitle
+        recipeTitle = request.form.get("title")
+        global shortDescription
+        shortDescription = request.form.get("description")
+        global url
+        url = request.form.get("image")
+        if testIngredients != None:
+            ingredientsArray.append(request.form['ingredients'])
+            return reRenderSubmit()
+        elif testSteps != None:
+            stepArray.append(request.form['steps'])
+            return reRenderSubmit()
 
 
-ingredientsArray= []
-@app.route('/addIngredientToSite', methods=['GET', 'POST'])
-def ingredient_Add():
-    if request.method == 'POST':
-           ingredientsArray.append(request.form['ingredients'])
-    return render_template('submit.html', ingredientsArray=ingredientsArray,stepsArray=stepsArray)
+
 
 
 @app.route("/submit", methods=['POST', 'GET'])
