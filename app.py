@@ -136,7 +136,7 @@ def search():
     if request.method == 'POST':
         ingredientsArray= []
         stepArray= []
-        search =request.form["search_Query"]
+        search = request.form["search_Query"]
         return redirect(url_for('searchresult', search=search))
     return render_template("search.html", counter=counter)
 
@@ -146,27 +146,35 @@ def search_Recipes():
     search = request.form.get('search_Query')
     count = mongo.db.recipes.find().count()
     i = 0
+    counter = 0
     recipeSearchTracker = []
+    titleArray = []
+    imageArray = []
+    descriptionArray = []
+    anchorUrl = []
+    recipeSet = []
     while i < count:
+        currentRecipeToCheck = list(mongo.db.recipes.find())[i]
+        title = currentRecipeToCheck["title"]
         currentRecipe = list(mongo.db.recipes.find())[i]
         title = currentRecipe["title"]
         search = search.lower()
         title = title.lower()
-        titleArray = []
-        imageArray = []
-        counter = 0
-        descriptionArray = []
-        anchorUrl = []
         if search in title:
-            print(title)
+            print("TEST SUCCESS EGG")
             titleArray.append(currentRecipe["title"])
             imageArray.append(currentRecipe["image"])
             descriptionArray.append(currentRecipe["description"])
             anchorUrl.append(currentRecipe["_id"])
+            recipeSet.append(currentRecipe)
             counter += 1
         i += 1
+    print(titleArray)
+    print(imageArray)
+    print(descriptionArray)
+    print(anchorUrl)
     return render_template('search.html', search=search,
-    currentRecipe=currentRecipe, titleArray=titleArray,
+    recipeSet=recipeSet, titleArray=titleArray,
     imageArray=imageArray, descriptionArray=descriptionArray,
     anchorUrl=anchorUrl, counter=counter)
 
