@@ -147,7 +147,6 @@ def search_Recipes():
     count = mongo.db.recipes.find().count()
     i = 0
     counter = 0
-    recipeSearchTracker = []
     titleArray = []
     imageArray = []
     descriptionArray = []
@@ -169,14 +168,16 @@ def search_Recipes():
             recipeSet.append(currentRecipe)
             counter += 1
         i += 1
-    print(titleArray)
-    print(imageArray)
-    print(descriptionArray)
-    print(anchorUrl)
+    if counter > 0:
+        searchCounter = "We have found " + str(counter) + " result"
+        if counter > 1:
+            searchCounter += "s"
+    else:
+        searchCounter = "Oops, it seems we don't have that recipe"
     return render_template('search.html', search=search,
     recipeSet=recipeSet, titleArray=titleArray,
     imageArray=imageArray, descriptionArray=descriptionArray,
-    anchorUrl=anchorUrl, counter=counter)
+    anchorUrl=anchorUrl, counter=counter, searchCounter=searchCounter)
 
 
 if __name__ == '__main__':
