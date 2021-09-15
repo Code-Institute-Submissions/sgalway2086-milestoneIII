@@ -12,7 +12,8 @@
       <input type="text" id="description" name="description" value = "{{ shortDescription }}" form = "add_Info_Form"><br><br>
       <div>
           <ul>{% for ingredientsArray in ingredientsArray %}
-              <li>{{ ingredientsArray }}</li>
+              <li>{{ ingredientsArray }}<input class ="deleteAddition" type = "submit" 
+                name = "submit" value = "delete{{ ingredientsArray }}" form = "add_Info_Form"></li>
               {% endfor %}
           </ul>
         <label for="ingredients">Ingredients:</label><br>
@@ -21,7 +22,8 @@
         </div>
         <div>
         <ol>{% for stepArray in stepArray %}
-            <li>{{ stepArray }}</li>
+            <li>{{ stepArray }}<input class ="deleteAddition" type = "submit" 
+            name = "submit" value = "delete{{ stepArray }}" form = "add_Info_Form"></li>  
             {% endfor %}
         </ol>
         <label for="steps">Steps:</label><br>

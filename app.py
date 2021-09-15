@@ -100,7 +100,7 @@ def add_Step_Or_Ingredient():
             stepArray.append(request.form['steps'])
             return reRenderSubmit()
         else:
-            return reRenderSubmit()
+            return delete_Addition()
 
 
 @app.route("/submit", methods=['POST', 'GET'])
@@ -178,6 +178,32 @@ def search_Recipes():
     recipeSet=recipeSet, titleArray=titleArray,
     imageArray=imageArray, descriptionArray=descriptionArray,
     anchorUrl=anchorUrl, counter=counter, searchCounter=searchCounter)
+
+
+@app.route('/deleteAddition', methods=['POST', 'GET'])
+def delete_Addition():
+    if request.method == "POST":
+        i = 0
+        while i < len(stepArray):
+            stepCheck = stepArray[i]
+            checkDeletePoint = "delete" + stepCheck
+            if request.form.get('submit') == checkDeletePoint:
+                stepArray.pop(i)
+                return reRenderSubmit()
+            else:
+                i+=1
+                continue
+        i = 0
+        while i < len(ingredientsArray):
+            ingredientsCheck = ingredientsArray[i]
+            checkDeletePoint = "delete" + ingredientsCheck
+            if request.form.get('submit') == checkDeletePoint:
+                ingredientsArray.pop(i)
+                return reRenderSubmit()
+            else:
+                i+=1
+                continue
+        return reRenderSubmit()
 
 
 if __name__ == '__main__':
