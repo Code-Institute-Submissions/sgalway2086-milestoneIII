@@ -12,8 +12,13 @@ body{
 }
 
 .recentRecipes{
-    width: 50%;
+    width: 48%;
     float: left;
+    margin: 1%;
+}
+
+.recentRecipes img{
+    width: 100%;
 }
 
 #rightRecentDiv{
@@ -84,10 +89,6 @@ header h1{
     margin-bottom: 32px;
 }
 
-.recentRecipes img{
-    width: 100%;
-}
-
 #recentAdditions a{
     color: #0f0f0f;
 }
@@ -142,6 +143,7 @@ a i{
     margin: auto;
     margin-bottom: 32px;
     margin-top: 32px;
+    overflow: auto;
 }
 
 #mainSubmit{
@@ -151,12 +153,22 @@ a i{
 }
 
 .resultRecipe{
-    padding: 24px;
-    width: 50%;
+    padding: 48px 1%;
+    width: 48%;
+    float: left;
+}
+
+.resultRecipe a{
+    text-decoration: none;
+    color: #0f0f0f;
+}
+
+.resultRecipe a:hover{
+    text-decoration: underline;
 }
 
 .resultRecipe img{
-    width: 100%;
+    width: 96%;
 }
 
 @media screen and (max-width: 1000px){

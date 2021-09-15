@@ -4,17 +4,16 @@
     <form action="searchresult" method="POST">
         <input id="user_input" type="text" name="search_Query" value="{{ search }}" required>
         <input id="search_submit" type="submit" value="Submit">
+        <a href="/randomrecipe"><button id = "randomRecipe">Random recipe</button></a>
     </form>   
-    <a href="/randomrecipe"><button id = "randomRecipe">Random recipe</button></a>
-
     {% for j in range(counter) %}
     <div class = "resultRecipe"><a href="/recipes/{{  anchorUrl[j] }}">
         {{  titleArray[j] }}
         <img src = {{ imageArray[j] }}>
         {{  descriptionArray[j] }}
     </a>
-    {% endfor %}
     </div>
+    {% endfor %}
 </div>
 
 {% endblock %} 
