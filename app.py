@@ -4,6 +4,7 @@ from flask import (
     Flask, flash, render_template, redirect, request, session, request, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -204,6 +205,11 @@ def delete_Addition():
                 i+=1
                 continue
         return reRenderSubmit()
+
+
+@app.route("/register", methods=['POST', 'GET'])
+def register():
+    return render_template("register.html")
 
 
 if __name__ == '__main__':
