@@ -121,6 +121,8 @@ a i{
     width: 60%;
     padding: 32px 48px;
     margin: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 #recipeDiv img{
@@ -156,6 +158,7 @@ a i{
     padding: 48px 1%;
     width: 48%;
     float: left;
+    display: block;
 }
 
 .resultRecipe a{
@@ -169,6 +172,23 @@ a i{
 
 .resultRecipe img{
     width: 96%;
+}
+
+#searchFormDiv{
+    width: 100%;
+}
+
+#searchFormDiv form{
+    display: inline;
+}
+
+#searchFormDiv a{
+    display: inline;
+}
+
+#resultCounter{
+    width: 100%;
+    float:left;
 }
 
 @media screen and (max-width: 1000px){
