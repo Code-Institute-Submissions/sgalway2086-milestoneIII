@@ -238,7 +238,6 @@ def login():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
         if existing_user:
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
@@ -292,6 +291,13 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/deleteRecipe/<recipe_id>")
+def delete_Recipe(recipe_id):
+    delete = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    mongo.db.recipes.delete_one(delete)
+    return redirect(url_for('profile', username=session['user']))
 
 
 if __name__ == '__main__':
