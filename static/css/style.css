@@ -201,6 +201,21 @@ a i{
     overflow: auto;
 }
 
+.deletebutton{
+    display: block;
+    width: 40%;
+    height: 25px;
+    background: #e13737;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    margin: 0 5%;
+}
+
+
 @media screen and (max-width: 1000px){
     nav a{
         margin-left: 16px;
