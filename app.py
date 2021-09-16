@@ -345,6 +345,40 @@ def edit(recipe_id):
     return redirect(url_for('profile', username=session['user']))
 
 
+@app.route("/test", methods=['POST', 'GET'])
+def test():
+    if session.get("user") is not None:
+        data = {}
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        global stepArray
+        global ingredientsArray
+        if request.method == "POST":
+            stepsdatabase = ''
+            for i in stepArray:
+                stepsdatabase += i + "{space}"
+            print(stepsdatabase)
+            ingredientsDataBase = ''
+            for i in ingredientsArray:
+                ingredientsDataBase += i + "{space}"
+            print(stepTest)
+            print(stepTest)
+            print(stepTest)
+            print(stepTest)
+            print(stepTest)
+            print(stepTest)
+            ingredientsArray= []
+            stepArray= []
+            flash("Test complete")
+        ingredientsArray= []
+        stepArray= []
+        return render_template("submit.html")
+    else:
+        flash("You must log in to submit a recipe")
+        return render_template("login.html")
+
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

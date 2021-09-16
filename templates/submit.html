@@ -3,7 +3,7 @@
 <div id = "submitRecipe">
   <h2>Add your recipe here:</h2><br>
   <form action="/addInfoToSite" id = "add_Info_Form" method = "POST"></form>
-  <form action="/submit" method = "POST">
+  <form action="/test" method = "POST">
       <label for="title">Recipe Title:</label><br>
       <input type="text" id="title" name="title" value = "{{ recipeTitle }}" form = "add_Info_Form"><br><br>
       <label for="image">Add Image URL:</label><br>
@@ -26,20 +26,21 @@
             name = "submit" value = "delete{{ stepArray }}" form = "add_Info_Form"></li>  
             {% endfor %}
         </ol>
-
-        <button type="button" class="add_field_button">Add Field</button>
-        <button type="button" class="remove_field_button">Remove Field</button>
-        <div class="input_fields_wrap">
-        <input type="text" name="answer[]" class="field-long" />
-        <input type="text" name="answer[]" class="field-long" />
-        <input type="text" name="answer[]" class="field-long" />
-        </div>
-
         <label for="steps">Steps:</label><br>
         <textarea type="text" id="steps" name="steps" form = "add_Info_Form"></textarea><br>
         <input id="add_Step" type = "submit" name="submit" value="Add Step" form = "add_Info_Form"><br><br>
         </div>
+
+        <br><br>
+
+        <div class="input_fields_wrap">
+          <button class="add_field_button">Add More Fields</button>
+          <div><input type="text" name="stepTest"></div>
+      </div>
+
+      <br><br>
         <input type="submit" value="Add Recipe">
+
     </form>
   </div>
 {% endblock %}
