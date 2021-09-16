@@ -16,8 +16,13 @@
             <a href = "/home">Home</a>
             <a href = "/search">Search</a>
             <a href = "/submit">Submit Recipe</a>
+            {% if session.user %}
+            <a href = "/logout">Log out</a>
+            <a href = "{{ url_for('profile', username=session['user']) }}">Profile</a>
+            {% else %}
             <a href = "/register">Register</a>
             <a href = "/login">Log in</a>
+            {% endif %}
         </nav>
         <nav id = "smallnav">
             <div class="drop-bar-button"><span><i class="fas fa-bars header-fa"></i></span>
