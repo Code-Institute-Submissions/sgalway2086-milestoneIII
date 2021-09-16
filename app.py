@@ -85,14 +85,14 @@ stepArray = []
 def add_Step_Or_Ingredient():
     if request.method == "POST":
         global testIngredients
-        testIngredients=request.form.get("ingredients")
         global testSteps
-        testSteps = request.form.get("steps")
         global recipeTitle
-        recipeTitle = request.form.get("title")
         global shortDescription
-        shortDescription = request.form.get("description")
         global url
+        testIngredients=request.form.get("ingredients")
+        testSteps = request.form.get("steps")
+        recipeTitle = request.form.get("title")
+        shortDescription = request.form.get("description")
         url = request.form.get("image")
         if request.form['submit'] == 'Add Ingredient' and len(testIngredients) >= 1:
             ingredientsArray.append(request.form['ingredients'])
