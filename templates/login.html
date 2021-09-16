@@ -4,10 +4,10 @@
 <h3>Register Account</h3>
 
 <div>
-    <form method = "POST" action = "/register">
+    <form method = "POST" action = "/login">
         <div>
             <div>
-                <i class="fa fa-user-plus" aria-hidden="true"></i>
+                <i class="fa fa-user-cog" aria-hidden="true"></i>
                 <input id = "username" name = "username" type = "text" pattern = "^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required>
                 <label for = "registerAccount">Username</label>
             </div>
@@ -20,15 +20,15 @@
             </div>
         </div>
         <div>
-            <button type = "submit">Register<i class="fas fa-sign-in-alt"></i></button>
+            <button type = "submit">Login<i class="fas fa-sign-in-alt"></i></button>
         </div>
     </form>
 </div>
 
 <div>
     <div>
-        <p>Already registered?
-            <a href="/login">Log in</a>
+        <p>New here?
+            <a href="/register">Register Account</a>
         </p>
     </div>
 </div>
