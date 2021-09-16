@@ -210,7 +210,7 @@ a i{
     padding: 10px 0px;
     text-align: center;
     border-radius: 5px;
-    color: white;
+    color: #e6e6e6;
     font-weight: bold;
     line-height: 25px;
     float: left;
@@ -225,10 +225,14 @@ a i{
     padding: 10px 0px;
     text-align: center;
     border-radius: 5px;
-    color: white;
+    color: #e6e6e6;
     font-weight: bold;
     line-height: 25px;
     float:left;
+}
+
+header h1{
+    color:#e6e6e6
 }
 
 
