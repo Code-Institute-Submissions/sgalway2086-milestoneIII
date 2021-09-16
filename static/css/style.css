@@ -284,7 +284,7 @@ a i{
     }
 
     .recentRecipes{
-        width: 100%;
+        width: 80%;
     }
 
     .resultRecipe{
@@ -299,6 +299,16 @@ a i{
         padding: 5%
     }
     #mainDescription{
+        width: 80%;
+        padding: 2%;
+    }
+
+    #recentAdditions{
+        width: 80%;
+        padding: 2%;
+    }
+
+    .recentRecipes{
         width: 80%;
         padding: 2%;
     }
