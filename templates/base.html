@@ -28,6 +28,13 @@
               <a class="drop-bar-option" href="/home">Home</a>
               <a class="drop-bar-option" href="/search">Search Recipes</a>
               <a class="drop-bar-option" href="/submit">Submit Recipe</a>
+              {% if session.user %}
+              <a class="drop-bar-option" href = "{{ url_for('profile', username=session['user']) }}">Profile</a>
+              <a class="drop-bar-option" href = "/logout">Log out</a>
+              {% else %}
+              <a class="drop-bar-option" href = "/login">Login</a>
+              <a class="drop-bar-option" href = "/register">Register</a>
+              {% endif %}
             </div>
         </nav>
     </header>

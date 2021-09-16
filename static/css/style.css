@@ -203,7 +203,7 @@ a i{
 
 .deletebutton{
     display: block;
-    width: 40%;
+    width: 50%;
     height: 25px;
     background: #e13737;
     padding: 10px;
@@ -212,7 +212,6 @@ a i{
     color: white;
     font-weight: bold;
     line-height: 25px;
-    margin: 0 5%;
 }
 
 
@@ -279,8 +278,17 @@ a i{
     .drop-bar-option:hover{
         background-color: #cccccc;
     }
+
     #recentAdditions{
         width: 80%;
+    }
+
+    .recentRecipes{
+        width: 100%;
+    }
+
+    .resultRecipe{
+        width: 100%;
     }
 }
 
