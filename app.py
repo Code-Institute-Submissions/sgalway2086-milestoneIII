@@ -132,6 +132,7 @@ def submit():
             mongo.db.recipes.insert_one(data)
         ingredientsArray= []
         stepArray= []
+        flash("Thank you for your submission!")
         return render_template("submit.html")
     else:
         flash("You must log in to submit a recipe")
