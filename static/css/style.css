@@ -204,7 +204,7 @@ a i{
 .deletebutton{
     display: block;
     width: 46%;
-    margin: 0 2%;
+    margin: 0 2% 0 0;
     height: 25px;
     background: #e13737;
     padding: 10px 0px;
@@ -213,6 +213,22 @@ a i{
     color: white;
     font-weight: bold;
     line-height: 25px;
+    float: left;
+}
+
+.editbutton{
+    display: block;
+    width: 46%;
+    margin: 0 2%;
+    height: 25px;
+    background: #37a6e1;
+    padding: 10px 0px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    float:left;
 }
 
 

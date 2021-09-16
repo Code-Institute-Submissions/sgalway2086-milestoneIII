@@ -109,7 +109,7 @@ def submit():
     if session.get("user") is not None:
         data = {}
         username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+            {"username": session["user"]})["username"]
         global stepArray
         global ingredientsArray
         if request.method == "POST":
