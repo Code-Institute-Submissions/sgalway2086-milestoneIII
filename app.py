@@ -305,6 +305,12 @@ def delete_Recipe(recipe_id):
     return redirect(url_for('profile', username=session['user']))
 
 
+@app.route("/editRecipe/<recipe_id>")
+def edit(recipe_id):
+    edit = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    mongo.db.recipes.delete_one(delete)
+    return redirect(url_for('profile', username=session['user']))
+
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
