@@ -7,17 +7,17 @@
         <label for = "image">Image Url:</label><br>
         <input name = "image" value = "{{ edits.image }}"><br><br>
         <label for = "description">Description:</label><br>
-        <input name = "description" value = "{{ edits.description }}"><br><br>
+        <textarea name = "description">{{ edits.description }}</textarea><br><br>
         <h3>Ingredients</h3>
         <ul>
             {% for i in unpackedIngredientsString %}
-            <input name = "steps" value = "{{ i }}"><br>
+            <li><input type = "text" name = "steps" value ="{{ i }}"></li>
             {% endfor %}
         </ul><br>
         <h3>Steps</h3>
         <ol>
             {% for j in unpackedStepsString %}
-            <input name = "ingredients" value = "{{ j }}"><br>
+            <li><textarea name = "ingredients">{{ j }}</textarea></li>
             {% endfor %}
         </ol>
         <input type= "submit">
