@@ -8,19 +8,19 @@
         <div>
             <div>
                 <i class="fa fa-user-plus" aria-hidden="true"></i>
-                <input id = "username" name = "username" type = "text">
+                <input id = "username" name = "username" type = "text" pattern = "^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required>
                 <label for = "registerAccount">Username</label>
             </div>
         </div>
         <div>
             <div>
                 <i class="fa fa-user-lock" aria-hidden="true"></i>
-                <input id = "password" name = "password" type = "password">
+                <input id = "password" name = "password" type = "password" pattern = "^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required>
                 <label for = "password">Password</label>
             </div>
         </div>
         <div>
-            <button type = "submit">Register <i class="fas fa-sign-in-alt"></i></button>
+            <button type = "submit">Register<i class="fas fa-sign-in-alt"></i></button>
         </div>
     </form>
 </div>

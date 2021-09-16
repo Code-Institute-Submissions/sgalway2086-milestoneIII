@@ -14,7 +14,7 @@
         <h1>Le Delizie</h1>
         <nav id = "largenav">
             <a href = "/home">Home</a>
-            <a href = "/search">Search Recipes</a>
+            <a href = "/search">Search</a>
             <a href = "/submit">Submit Recipe</a>
             <a href = "/register">Register</a>
         </nav>
@@ -26,6 +26,17 @@
             </div>
         </nav>
     </header>
+    <section>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for messages in messages %}
+                    <div>
+                        <h4>{{ message }}</h4>
+                    </div>
+                {% endfor%}
+            {% endif %}
+        {% endwith %}
+    </section>
     {% block content %}
     {% endblock %}
     <footer>
