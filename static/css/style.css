@@ -191,6 +191,16 @@ a i{
     float:left;
 }
 
+#profileDiv{
+    background-color: #e6e6e6;
+    width: 60%;
+    padding: 32px 48px;
+    margin: auto;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    overflow: auto;
+}
+
 @media screen and (max-width: 1000px){
     nav a{
         margin-left: 16px;

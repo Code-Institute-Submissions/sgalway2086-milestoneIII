@@ -17,11 +17,10 @@
             <a href = "/search">Search</a>
             <a href = "/submit">Submit Recipe</a>
             {% if session.user %}
-            <a href = "/logout">Log out</a>
             <a href = "{{ url_for('profile', username=session['user']) }}">Profile</a>
+            <a href = "/logout">Log out</a>
             {% else %}
-            <a href = "/register">Register</a>
-            <a href = "/login">Log in</a>
+            <a href = "/login">Account</a>
             {% endif %}
         </nav>
         <nav id = "smallnav">
@@ -35,7 +34,7 @@
     <section>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
-                {% for messages in messages %}
+                {% for message in messages %}
                     <div>
                         <h4>{{ message }}</h4>
                     </div>

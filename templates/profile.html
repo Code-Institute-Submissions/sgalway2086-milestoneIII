@@ -3,8 +3,17 @@
 
 <div>
     <div>
-        <div>
+        <div id = "profileDiv">
             <h3>{{username}}'s profile</h3>
+
+            {% for j in range(counter) %}
+                <div class = "resultRecipe"><a href="/recipes/{{  anchorUrl[j] }}">
+                    <h3>{{  titleArray[j] }}</h3>
+                    <img src = {{ imageArray[j] }}>
+                {{  descriptionArray[j] }}
+                </a>
+                </div>
+    {% endfor %}
         </div>
     </div>
 </div>

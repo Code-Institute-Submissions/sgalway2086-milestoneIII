@@ -106,29 +106,36 @@ def add_Step_Or_Ingredient():
 
 @app.route("/submit", methods=['POST', 'GET'])
 def submit():
-    data = {}
-    global stepArray
-    global ingredientsArray
-    if request.method == "POST":
-        stepsdatabase = ''
-        for i in stepArray:
-            stepsdatabase += i + "{space}"
-        print(stepsdatabase)
-        ingredientsDataBase = ''
-        for i in ingredientsArray:
-            ingredientsDataBase += i + "{space}"
-        print(ingredientsDataBase)
-        data['title']=recipeTitle
-        data['image']=url
-        data['description']=shortDescription
-        data['ingredients']=ingredientsDataBase
-        data['steps']=stepsdatabase
+    if session.get("user") is not None:
+        data = {}
+        username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+        global stepArray
+        global ingredientsArray
+        if request.method == "POST":
+            stepsdatabase = ''
+            for i in stepArray:
+                stepsdatabase += i + "{space}"
+            print(stepsdatabase)
+            ingredientsDataBase = ''
+            for i in ingredientsArray:
+                ingredientsDataBase += i + "{space}"
+            print(ingredientsDataBase)
+            data['title']=recipeTitle
+            data['image']=url
+            data['description']=shortDescription
+            data['ingredients']=ingredientsDataBase
+            data['steps']=stepsdatabase
+            data['uploader']=username
+            ingredientsArray= []
+            stepArray= []
+            mongo.db.recipes.insert_one(data)
         ingredientsArray= []
         stepArray= []
-        mongo.db.recipes.insert_one(data)
-    ingredientsArray= []
-    stepArray= []
-    return render_template("submit.html")
+        return render_template("submit.html")
+    else:
+        flash("You must log in to submit a recipe")
+        return render_template("login.html")
 
 
 @app.route("/search", methods=['POST', 'GET'])
@@ -161,7 +168,6 @@ def search_Recipes():
         search = search.lower()
         title = title.lower()
         if search in title:
-            print("TEST SUCCESS EGG")
             titleArray.append(currentRecipe["title"])
             imageArray.append(currentRecipe["image"])
             descriptionArray.append(currentRecipe["description"])
@@ -255,7 +261,29 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
-        return render_template("profile.html", username=username)
+        count = mongo.db.recipes.find().count()
+        i = 0
+        counter = 0
+        titleArray = []
+        imageArray = []
+        descriptionArray = []
+        anchorUrl = []
+        recipeSet = []
+        while i < count:
+            currentRecipe = list(mongo.db.recipes.find())[i]
+            uploader = currentRecipe["uploader"]
+            if username == uploader:
+                titleArray.append(currentRecipe["title"])
+                imageArray.append(currentRecipe["image"])
+                descriptionArray.append(currentRecipe["description"])
+                anchorUrl.append(currentRecipe["_id"])
+                recipeSet.append(currentRecipe)
+                counter += 1
+            i += 1
+        return render_template('profile.html', username=username,
+            recipeSet=recipeSet, titleArray=titleArray,
+            imageArray=imageArray, descriptionArray=descriptionArray,
+            anchorUrl=anchorUrl, counter=counter)
     return redirect(url_for("login"))
 
 
