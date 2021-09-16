@@ -284,11 +284,25 @@ a i{
     }
 
     .recentRecipes{
-        width: 80%;
+        width: 100%;
+    }
+
+    .recentRecipes img{
+        width:98%;
     }
 
     .resultRecipe{
         width: 100%;
+    }
+
+    #rightRecentDiv{
+        width: 100%;
+        margin: 0px;
+    }
+    
+    #leftRecentDiv{
+        width: 100%;
+        margin: 0px;
     }
 }
 
@@ -309,7 +323,7 @@ a i{
     }
 
     .recentRecipes{
-        width: 80%;
+        width: 96%;
         padding: 2%;
     }
 }
