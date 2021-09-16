@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 <div id = "searchPage">
+    <div id = "searchDescription">
+        <h2>Search</h2><br>
+        <p>
+            Search our range of recipes, currently we have {{ siteRecipeCount }} recipes on our site,
+            we have a feeling you'll find the perfect one for that special meal. Either search, or use 
+            our randomiser to get a surprise recipe, the choice is yours!
+        </p><br>
+    </div>
     <div id = "searchFormDiv">
         <form action="searchresult" method="POST">
             <input id="user_input" type="text" name="search_Query" value="{{ search }}" required>

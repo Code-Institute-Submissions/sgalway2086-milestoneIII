@@ -141,12 +141,13 @@ def submit():
 @app.route("/search", methods=['POST', 'GET'])
 def search():
     counter = 0
+    siteRecipeCount = mongo.db.recipes.find().count()
     if request.method == 'POST':
         ingredientsArray= []
         stepArray= []
         search = request.form["search_Query"]
         return redirect(url_for('searchresult', search=search))
-    return render_template("search.html", counter=counter)
+    return render_template("search.html", counter=counter, siteRecipeCount=siteRecipeCount)
 
 
 @app.route('/searchresult', methods=['POST', 'GET'])
