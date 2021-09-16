@@ -1,20 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 <div id = "recipeDiv">
-        <h2>{{ recipes.title }}</h2>
-        <img src = {{ recipes.image }}><br>
-        {{ recipes.description }}<br><br>
+    <form>
+        <label for = "title">Title:</label><br>
+        <input name= "title" value = "{{ edits.title }}"><br><br>
+        <label for = "image">Image Url:</label><br>
+        <input name = "image" value = "{{ edits.image }}"><br><br>
+        <label for = "description">Description:</label><br>
+        <input name = "description" value = "{{ edits.description }}"><br><br>
         <h3>Ingredients</h3>
         <ul>
             {% for i in unpackedIngredientsString %}
-                <li>{{ i }}</li>
+            <input name = "steps" value = "{{ i }}"><br>
             {% endfor %}
         </ul><br>
         <h3>Steps</h3>
         <ol>
             {% for j in unpackedStepsString %}
-                <li>{{ j }}</li>
+            <input name = "ingredients" value = "{{ j }}"><br>
             {% endfor %}
         </ol>
+        <input type= "submit">
+    </form>
+        
 </div>
 {% endblock %} 

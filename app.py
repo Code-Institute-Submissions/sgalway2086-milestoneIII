@@ -307,9 +307,42 @@ def delete_Recipe(recipe_id):
 
 @app.route("/editRecipe/<recipe_id>")
 def edit(recipe_id):
-    edit = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    mongo.db.recipes.delete_one(delete)
+    edits = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    stepsStringForChange = edits.get("steps")
+    stepsFinished = False
+    unpackedStepsString = []
+    while stepsFinished is False:
+        num1 = stepsStringForChange.find('{space}')
+        num2 = num1 + 7
+        instruction = stepsStringForChange[0:num1]
+        remove = stepsStringForChange[0:num2]
+        unpackedStepsString.append(instruction)
+        stepsStringForChange = stepsStringForChange.replace(remove, "")
+        if len(stepsStringForChange) == 0:
+            stepsFinished = True
+        else:
+            continue
+    ingredientsStringChange = edits.get("ingredients")
+    unpackedIngredientsString = []
+    ingredientsFinished = False
+    while ingredientsFinished is False:
+        num1 = ingredientsStringChange.find('{space}')
+        num2 = num1 + 7
+        instruction = ingredientsStringChange[0:num1]
+        remove = ingredientsStringChange[0:num2]
+        unpackedIngredientsString.append(instruction)
+        ingredientsStringChange = ingredientsStringChange.replace(remove, "")
+        if len(ingredientsStringChange) == 0:
+            ingredientsFinished = True
+            return render_template("edits.html", edits=edits,
+            unpackedStepsString=unpackedStepsString,
+            unpackedIngredientsString=unpackedIngredientsString)
+        else:
+            continue
+
+
     return redirect(url_for('profile', username=session['user']))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
