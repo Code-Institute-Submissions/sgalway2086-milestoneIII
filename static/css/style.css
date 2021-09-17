@@ -155,13 +155,14 @@ a i{
     padding: 32px 48px;
     margin: auto;
     margin-bottom: 32px;
-    margin-top: 32px;
+    margin-top: 24px;
     overflow: auto;
-    min-height: 60vh;
+    min-height: 75vh;
 }
 
 .login_reg_style form{
     text-align: center;
+    margin-top: 30%;
 }
 
 #searchFormDiv{
@@ -258,7 +259,6 @@ a i{
 header h1{
     color:#e6e6e6
 }
-
 
 @media screen and (max-width: 1000px){
     nav a{
@@ -452,6 +452,22 @@ span:hover .header-fa{
 
     .submitInputSmaller{
         width: 78%;
+    }
+
+    .login_reg_style{
+        background-color: #e6e6e6;
+        width: 60%;
+        padding: 32px 48px;
+        margin: auto;
+        margin-bottom: 32px;
+        margin-top: 24px;
+        overflow: auto;
+        min-height: 75vh;
+    }
+    
+    .login_reg_style form{
+        text-align: center;
+        margin-top: 30%;
     }
 }
 
