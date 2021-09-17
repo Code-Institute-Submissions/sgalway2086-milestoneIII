@@ -263,7 +263,7 @@ header h1{
 }
 
 .loginWrap{
-    margin-top: 30%;
+    margin-top: 20%;
 }
 
 .login_reg_style form{
@@ -338,6 +338,9 @@ span:hover .header-fa{
     width: 50%;
     height: 24px;
     border-radius:12px;
+}
+.loginWrap{
+    margin-top: 30%;
 }
 }
 
