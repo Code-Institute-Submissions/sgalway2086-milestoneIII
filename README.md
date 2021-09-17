@@ -117,3 +117,30 @@ For a mobile user
 * A randomizer function to add a fun element to the user and due to its uniqueness keep users returning for when they’re unsure of what they want for a meal
 * Ability to create, login, and logout of an account
 * Using the aforementioned account, find previously submitted recipes and edit or delete
+
+
+# Testing User Stories
+
+## New User
+
+* A new user will be presented right away with a description of the site, the purpose and has access to start exploring the contents of the site immediately in the large nav bar.
+
+* All functions are easy to understand due to the clear, and visible icon usage on the page and descriptions present for all parts
+
+
+## Returning user
+
+* The log in function is available right from when the site is accessed, and recent sites are on the frong page leading to giving a returning user new content to enjoy
+
+* The ability to edit, delete, add and search websites is very fun to explore for a user and is rather enticing
+
+
+## Site owner
+
+* For a site owner, having the brand of cooking utensils named on the front page was paramount. Nestling it within the description, with a rather upbeat tone creates a positive view of the company and the links to the social media site are sure to attract new users.
+
+## Mobile User
+
+* For a mobile user, the site can be navigated very smoothly and with a small collapsable navbar, which proves to be very useful for navigation, and all the sites functions remain perfecty operational and aesthetically pleasing on mobile.
+
+

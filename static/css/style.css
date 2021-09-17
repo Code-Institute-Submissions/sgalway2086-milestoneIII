@@ -149,22 +149,6 @@ a i{
     min-height: 60vh;
 }
 
-.login_reg_style{
-    background-color: #e6e6e6;
-    width: 60%;
-    padding: 32px 48px;
-    margin: auto;
-    margin-bottom: 32px;
-    margin-top: 24px;
-    overflow: auto;
-    min-height: 75vh;
-}
-
-.login_reg_style form{
-    text-align: center;
-    margin-top: 30%;
-}
-
 #searchFormDiv{
     text-align: center;
 }
@@ -261,9 +245,30 @@ header h1{
 }
 
 .loginInputs{
-    width: 30%;
     height: 24px;
     border-radius:12px;
+    width: 40%;
+}
+
+.login_reg_style{
+    background-color: #e6e6e6;
+    width: 60%;
+    padding: 32px 48px;
+    margin: auto;
+    margin-bottom: 32px;
+    margin-top: 24px;
+    overflow: auto;
+    min-height: 70vh;
+    position: relative;
+}
+
+.loginWrap{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 1000px){
@@ -322,6 +327,11 @@ span:hover .header-fa{
 }
 .drop-bar-option:hover{
     background-color: #cccccc;
+}
+.loginInputs{
+    width: 50%;
+    height: 24px;
+    border-radius:12px;
 }
 }
 
@@ -474,6 +484,12 @@ span:hover .header-fa{
     .login_reg_style form{
         text-align: center;
         margin-top: 30%;
+    }
+
+    .loginInputs{
+        width: 90%;
+        height: 24px;
+        border-radius:12px;
     }
 }
 
