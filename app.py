@@ -133,32 +133,6 @@ def search_Recipes():
     anchorUrl=anchorUrl, counter=counter, searchCounter=searchCounter)
 
 
-@app.route('/deleteAddition', methods=['POST', 'GET'])
-def delete_Addition():
-    if request.method == "POST":
-        i = 0
-        while i < len(stepArray):
-            stepCheck = stepArray[i]
-            checkDeletePoint = "delete" + stepCheck
-            if request.form.get('submit') == checkDeletePoint:
-                stepArray.pop(i)
-                return reRenderSubmit()
-            else:
-                i+=1
-                continue
-        i = 0
-        while i < len(ingredientsArray):
-            ingredientsCheck = ingredientsArray[i]
-            checkDeletePoint = "delete" + ingredientsCheck
-            if request.form.get('submit') == checkDeletePoint:
-                ingredientsArray.pop(i)
-                return reRenderSubmit()
-            else:
-                i+=1
-                continue
-        return reRenderSubmit()
-
-
 @app.route("/register", methods=['POST', 'GET'])
 def register():
     if request.method == "POST":
