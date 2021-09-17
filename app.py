@@ -289,7 +289,7 @@ def edit(recipe_id):
     return redirect(url_for('profile', username=session['user']))
 
 
-@app.route("/test", methods=['POST', 'GET'])
+@app.route("/submit", methods=['POST', 'GET'])
 def test():
     if session.get("user") is not None:
         data = {}
