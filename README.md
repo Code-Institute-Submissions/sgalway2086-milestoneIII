@@ -36,3 +36,43 @@ For a mobile user
 * The sites styling will be done in a way as to attract a user towards being able to explore the site immediately, with content available front page with not even the need to scroll enticing users, and then being able to reach the search bar easily, enticing users immediately
 
 # Wireframes
+
+
+
+
+
+
+# Technology Used
+
+## Google Fonts
+* Google Fonts "Dancing Script" and “Kaisei Tokumin” font were used for this project
+
+## FontAwesome
+* Various FontAwesome logos were utilised to create a more clean user interface
+
+## Gitpod
+* The version control on Gitpod was used to create commits and version control the project
+
+## Github
+* Github was used to store all versions commited from Gitpod
+
+## Heroku
+* Heroku was used to create an app and make the website live
+
+## MongoDB
+* MongoDB was used to create a database and two collections for the site
+
+## JQuery
+* JQuery was used to write custom javascript files for the submission page of the site
+
+## Pymongo
+* Pymongo and its technologies (specifically werkzeug) were used to create the websites ability to interact with the database
+
+## Jinja
+* Jinja was used for the creation of templates within the project
+
+## Microsoft Paint
+* Microsoft Paint was used to create various wireframes of different sizes of the site
+
+## Favicon.cc
+* This site was used to make the favicon
