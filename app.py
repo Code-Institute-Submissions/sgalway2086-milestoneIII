@@ -1,7 +1,7 @@
 import os
 import random
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, request, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -18,11 +18,10 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/home")
 def home():
-    ingredientsArray= []
-    stepArray= []
     recent1 = list(mongo.db.recipes.find())[-1]
     recent2 = list(mongo.db.recipes.find())[-2]
     return render_template("home.html", recent1=recent1, recent2=recent2)
@@ -57,9 +56,10 @@ def get_recipes(recipe_id):
         ingredientsStringChange = ingredientsStringChange.replace(remove, "")
         if len(ingredientsStringChange) == 0:
             ingredientsFinished = True
-            return render_template("recipes.html", recipes=recipes,
-            unpackedStepsString=unpackedStepsString,
-            unpackedIngredientsString=unpackedIngredientsString)
+            return render_template(
+                "recipes.html", recipes=recipes,
+                unpackedStepsString=unpackedStepsString,
+                unpackedIngredientsString=unpackedIngredientsString)
         else:
             continue
 
@@ -75,7 +75,8 @@ def random_recipe():
 
 
 def reRenderSubmit():
-    return render_template('submit.html', stepArray=stepArray,
+    return render_template(
+        'submit.html', stepArray=stepArray,
         recipeTitle=recipeTitle, url=url, shortDescription=shortDescription,
         ingredientsArray=ingredientsArray)
 
@@ -89,11 +90,12 @@ def search():
     counter = 0
     siteRecipeCount = mongo.db.recipes.find().count()
     if request.method == 'POST':
-        ingredientsArray= []
-        stepArray= []
+        ingredientsArray = []
+        stepArray = []
         search = request.form["search_Query"]
         return redirect(url_for('searchresult', search=search))
-    return render_template("search.html", counter=counter, siteRecipeCount=siteRecipeCount)
+    return render_template(
+        "search.html", counter=counter, siteRecipeCount=siteRecipeCount)
 
 
 @app.route('/searchresult', methods=['POST', 'GET'])
@@ -128,10 +130,11 @@ def search_Recipes():
             searchCounter += "s"
     else:
         searchCounter = "Oops, it seems we don't have that recipe"
-    return render_template('search.html', search=search,
-    recipeSet=recipeSet, titleArray=titleArray,
-    imageArray=imageArray, descriptionArray=descriptionArray,
-    anchorUrl=anchorUrl, counter=counter, searchCounter=searchCounter)
+    return render_template(
+        'search.html', search=search,
+        recipeSet=recipeSet, titleArray=titleArray,
+        imageArray=imageArray, descriptionArray=descriptionArray,
+        anchorUrl=anchorUrl, counter=counter, searchCounter=searchCounter)
 
 
 @app.route("/register", methods=['POST', 'GET'])
@@ -160,12 +163,11 @@ def login():
             {"username": request.form.get("username").lower()})
         if existing_user:
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                existing_user["password"], request.form.get("password"))
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
                     request.form.get("username")))
-                return redirect(url_for(
-                    "profile", username=session["user"]))
+                return redirect(url_for("profile", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -199,7 +201,8 @@ def profile(username):
                 recipeSet.append(currentRecipe)
                 counter += 1
             i += 1
-        return render_template('profile.html', username=username,
+        return render_template(
+            'profile.html', username=username,
             recipeSet=recipeSet, titleArray=titleArray,
             imageArray=imageArray, descriptionArray=descriptionArray,
             anchorUrl=anchorUrl, counter=counter)
@@ -244,21 +247,23 @@ def edit(recipe_id):
                     stepsFinished = True
                 else:
                     continue
-                ingredientsStringChange = to_Edit.get("ingredients")
-                unpackedIngredientsString = []
+                ingredientStringChange = to_Edit.get("ingredients")
+                unpackedIngredientString = []
                 ingredientsFinished = False
                 while ingredientsFinished is False:
-                    num1 = ingredientsStringChange.find('{space}')
+                    num1 = ingredientStringChange.find('{space}')
                     num2 = num1 + 7
-                    instruction = ingredientsStringChange[0:num1]
-                    remove = ingredientsStringChange[0:num2]
-                    unpackedIngredientsString.append(instruction)
-                    ingredientsStringChange = ingredientsStringChange.replace(remove, "")
-                    if len(ingredientsStringChange) == 0:
+                    instruction = ingredientStringChange[0:num1]
+                    remove = ingredientStringChange[0:num2]
+                    unpackedIngredientString.append(instruction)
+                    ingredientStringChange = ingredientStringChange.replace(
+                        remove, "")
+                    if len(ingredientStringChange) == 0:
                         ingredientsFinished = True
-                        return render_template("edits.html", edits=to_Edit,
-                        unpackedStepsString=unpackedStepsString,
-                        unpackedIngredientsString=unpackedIngredientsString)
+                        return render_template(
+                            "edits.html", edits=to_Edit,
+                            unpackedStepString=unpackedStepString,
+                            unpackedIngredientString=unpackedIngredientString)
                     else:
                         continue
         flash("You do not have access to this page")
@@ -287,18 +292,17 @@ def send_Edit_To_Db(recipe_id):
             for i in ingredients:
                 ingredientsDataBase += i + "{space}"
             data = {
-                "title":request.form.get('title'),
-                "image":request.form.get('image'),
-                "description":request.form.get('description'),
-                "ingredients":ingredientsDataBase,
-                "steps":stepsdatabase,
-                "uploader":username
+                "title": request.form.get('title'),
+                "image": request.form.get('image'),
+                "description": request.form.get('description'),
+                "ingredients": ingredientsDataBase,
+                "steps": stepsdatabase,
+                "uploader": username
             }
-            mongo.db.recipes.update({'_id':id}, {"$set": data}, upsert=False)
+            mongo.db.recipes.update({'_id': id}, {"$set": data}, upsert=False)
             return redirect(url_for('profile', username=session['user']))
         flash("You do not have access to this page")
         return render_template("home.html")
-
 
 
 @app.route("/submit", methods=['POST', 'GET'])

@@ -117,6 +117,7 @@ For a mobile user
 * A randomizer function to add a fun element to the user and due to its uniqueness keep users returning for when they’re unsure of what they want for a meal
 * Ability to create, login, and logout of an account
 * Using the aforementioned account, find previously submitted recipes and edit or delete
+* A set of python code that compresses the steps and instructions into a single string apiece, seperated by a set break point that is added and removed upon loading or sending a recipe. This is useful as it theoretically garuantees unlimited entries in certain fields.
 
 
 # Testing User Stories
@@ -155,3 +156,56 @@ All the HTML was run through the w3c validator, without showing any errors unrel
 The CSS passed without issue
 
 ![CSS Validation](/documentation/wireframes/validatedcss.png "CSS Validation")
+
+## Python Validation
+
+All code was run through and linted carefully to be pep8 compliant and without error
+
+# Further Testing
+
+## Technical Tests
+
+* During the design and testing process, every function and possible operation was tested multiple times (including in various orders in order to ensure that no possible operations could cause errors within the system). This was paramount as sometimes it can happen that a certain combination to break the site, necessating being thorough with this process.
+
+* Various tests were carried out with a large variety of devices, to ensure compatability to the highest level possible. Two computers, and three mobile phones were used to test this website and throughly test its usability.
+
+* Multiple browsers were also used during the testing process. Google Chrome, Safari, Samsung Internet and firefox were tested.
+
+* Placement of buttons and options were examined thoroughly, to ensure they all work and do not cause any issues with navigating the files.
+
+* Database testing was carried out enormously, specifically the send and retrieve function to ensure it works without errors.
+
+# Deployment
+
+## heroku Pages
+
+The project was deployed to github pages in this way:
+1. Log into heroku
+2. Click new and create an app
+3. Add all details from the github repository to make its var config file complete to allow it interaction
+
+Switch to MongoDB
+
+1. Log into mongoDB
+2. Set up the database with all collections in place
+3. Create a key to place within the env.py file
+
+Switch back to heroku
+
+4. Add the key to heroku also with the password given
+5. Set up the database
+6. Connect to github
+7. Select repository
+8. Set to deploy automatically
+
+
+
+# Credits
+## content
+* All code written by Stephen Galway
+
+## Acknowlegements
+* My mentor Aaron for providing many valuable insights on improving the website and the various 
+testers who offered advice to make the website more user friendly. Also to the staff at the tutor support who were a fantastic help throughout the project
+
+
