@@ -2,45 +2,23 @@
 {% block content %}
 <div id = "submitRecipe">
   <h2>Add your recipe here:</h2><br>
-  <form action="/addInfoToSite" id = "add_Info_Form" method = "POST"></form>
   <form action="/test" method = "POST">
       <label for="title">Recipe Title:</label><br>
-      <input type="text" id="title" name="title" value = "{{ recipeTitle }}" form = "add_Info_Form"><br><br>
+      <input type="text" id="title" name="title"><br><br>
       <label for="image">Add Image URL:</label><br>
-      <input type="text" id="image" name="image" value = "{{ url }}" form = "add_Info_Form"><br><br>
+      <input type="text" id="image" name="image"><br><br>
       <label for="description">Short description:</label><br>
-      <textarea type="text" id="description" name="description" value = "{{ shortDescription }}" form = "add_Info_Form"></textarea><br><br>
-      <div>
-          <ul>{% for ingredientsArray in ingredientsArray %}
-              <li>{{ ingredientsArray }}<input class ="deleteAddition" type = "submit" 
-                name = "submit" value = "delete{{ ingredientsArray }}" form = "add_Info_Form"></li>
-              {% endfor %}
-          </ul>
-        <label for="ingredients">Ingredients:</label><br>
-        <input type="text" id="ingredients" name="ingredients" form = "add_Info_Form"><br>
-        <input id="add_Ingredient" type = "submit" name = "submit" value="Add Ingredient" form = "add_Info_Form"><br>
+      <textarea type="text" id="description" name="description"></textarea><br><br>
+        <div class="input_ingredients_wrap">
+          <button class="add_ingredient_button">Add Ingredient</button>
+          <div><input type="text" name="ingredient"></div>
+        </div><br>
+        <div class="input_steps_wrap">
+          <button class="add_step_button">Add Step</button>
+          <div><input type="text" name="step"></div>
         </div>
-        <div>
-        <ol>{% for stepArray in stepArray %}
-            <li>{{ stepArray }}<input class ="deleteAddition" type = "submit" 
-            name = "submit" value = "delete{{ stepArray }}" form = "add_Info_Form"></li>  
-            {% endfor %}
-        </ol>
-        <label for="steps">Steps:</label><br>
-        <textarea type="text" id="steps" name="steps" form = "add_Info_Form"></textarea><br>
-        <input id="add_Step" type = "submit" name="submit" value="Add Step" form = "add_Info_Form"><br><br>
-        </div>
-
-        <br><br>
-
-        <div class="input_fields_wrap">
-          <button class="add_field_button">Add More Fields</button>
-          <div><input type="text" name="stepTest"></div>
-      </div>
-
-      <br><br>
+      <br>
         <input type="submit" value="Add Recipe">
-
     </form>
   </div>
 {% endblock %}

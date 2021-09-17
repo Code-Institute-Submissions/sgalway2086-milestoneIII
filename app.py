@@ -81,62 +81,6 @@ def reRenderSubmit():
 
 ingredientsArray = []
 stepArray = []
-@app.route('/addInfoToSite', methods=['GET','POST'])
-def add_Step_Or_Ingredient():
-    if request.method == "POST":
-        global testIngredients
-        global testSteps
-        global recipeTitle
-        global shortDescription
-        global url
-        testIngredients=request.form.get("ingredients")
-        testSteps = request.form.get("steps")
-        recipeTitle = request.form.get("title")
-        shortDescription = request.form.get("description")
-        url = request.form.get("image")
-        if request.form['submit'] == 'Add Ingredient' and len(testIngredients) >= 1:
-            ingredientsArray.append(request.form['ingredients'])
-            return reRenderSubmit()
-        elif request.form['submit'] == 'Add Step' or len(testSteps) >= 1:
-            stepArray.append(request.form['steps'])
-            return reRenderSubmit()
-        else:
-            return delete_Addition()
-
-
-@app.route("/submit", methods=['POST', 'GET'])
-def submit():
-    if session.get("user") is not None:
-        data = {}
-        username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
-        global stepArray
-        global ingredientsArray
-        if request.method == "POST":
-            stepsdatabase = ''
-            for i in stepArray:
-                stepsdatabase += i + "{space}"
-            print(stepsdatabase)
-            ingredientsDataBase = ''
-            for i in ingredientsArray:
-                ingredientsDataBase += i + "{space}"
-            print(ingredientsDataBase)
-            data['title']=recipeTitle
-            data['image']=url
-            data['description']=shortDescription
-            data['ingredients']=ingredientsDataBase
-            data['steps']=stepsdatabase
-            data['uploader']=username
-            ingredientsArray= []
-            stepArray= []
-            mongo.db.recipes.insert_one(data)
-            flash("Thank you for your submission!")
-        ingredientsArray= []
-        stepArray= []
-        return render_template("submit.html")
-    else:
-        flash("You must log in to submit a recipe")
-        return render_template("login.html")
 
 
 @app.route("/search", methods=['POST', 'GET'])
@@ -351,32 +295,28 @@ def test():
         data = {}
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
-        global stepArray
-        global ingredientsArray
         if request.method == "POST":
             stepsdatabase = ''
-            for i in stepArray:
+            ingredientsDataBase = ''
+            steps = request.form.getlist('step')
+            for i in steps:
                 stepsdatabase += i + "{space}"
             print(stepsdatabase)
-            ingredientsDataBase = ''
-            for i in ingredientsArray:
+            ingredients = request.form.getlist('ingredient')
+            for i in ingredients:
                 ingredientsDataBase += i + "{space}"
-            print(stepTest)
-            print(stepTest)
-            print(stepTest)
-            print(stepTest)
-            print(stepTest)
-            print(stepTest)
-            ingredientsArray= []
-            stepArray= []
-            flash("Test complete")
-        ingredientsArray= []
-        stepArray= []
+            data['title'] = request.form.get('title')
+            data['image'] = request.form.get('image')
+            data['description'] = request.form.get('description')
+            data['ingredients'] = ingredientsDataBase
+            data['steps'] = stepsdatabase
+            data['uploader'] = username
+            mongo.db.recipes.insert_one(data)
+            flash("Thank you for your submission!")
         return render_template("submit.html")
     else:
         flash("You must log in to submit a recipe")
         return render_template("login.html")
-
 
 
 if __name__ == '__main__':
