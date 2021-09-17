@@ -3,23 +3,21 @@
 <div class = "login_reg_style">
     <h3>Login</h3>
     <div class = "loginWrap">
-    
-    <form method = "POST" action = "/login">
-        <div>
-            <label class = "smallLabel" for = "username">Username</label><br>
+        <form method = "POST" action = "/login">
+            <div>
+                <label class = "smallLabel" for = "username">Username</label><br>
                 <input class = "loginInputs" id = "username" name = "username" type = "text" pattern = "^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required><br>
-        </div>
-        <div>
-            <label class = "smallLabel" for = "password">Password</label><br>
+            </div>
+            <div>
+                <label class = "smallLabel" for = "password">Password</label><br>
                 <input class = "loginInputs" id = "password" name = "password" type = "password" pattern = "^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required><br>
-        </div>
-        <div>
-            <button type = "submit">Login<i class="fas fa-sign-in-alt"></i></button>
-            <p>New here? <a href="/register">Register</a></p>
-            
-        </div>
-    </form>
-</div>
+            </div>
+            <div>
+                <button type = "submit">Login<i class="fas fa-sign-in-alt"></i></button>
+                <p>New here? <a href="/register">Register</a></p>
+            </div>
+        </form>
+    </div>
 </div>
 
 {% endblock %} 

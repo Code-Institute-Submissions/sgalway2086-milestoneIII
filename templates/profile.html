@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div>
     <div>
         <div id = "profileDiv">
@@ -10,15 +9,13 @@
                 <div class = "resultRecipe"><a href="/recipes/{{  anchorUrl[j] }}">
                     <h3>{{  titleArray[j] }}</h3>
                     <img src = {{ imageArray[j] }}>
-                {{  descriptionArray[j] }}
-                </a><br>
-                <a class = "deletebutton" href="/deleteRecipe/{{  anchorUrl[j] }}">Delete</a>
-                <a class = "editbutton" href="/editRecipe/{{  anchorUrl[j] }}">Edit</a><br>
-                
+                    {{  descriptionArray[j] }}
+                    </a><br>
+                    <a class = "deletebutton" href="/deleteRecipe/{{  anchorUrl[j] }}">Delete</a>
+                    <a class = "editbutton" href="/editRecipe/{{  anchorUrl[j] }}">Edit</a><br>
                 </div>
-    {% endfor %}
+            {% endfor %}
         </div>
     </div>
 </div>
-
 {% endblock %} 
