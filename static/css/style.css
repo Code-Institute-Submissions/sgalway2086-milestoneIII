@@ -260,6 +260,12 @@ header h1{
     color:#e6e6e6
 }
 
+.loginInputs{
+    width: 30%;
+    height: 24px;
+    border-radius:12px;
+}
+
 @media screen and (max-width: 1000px){
     nav a{
         margin-left: 16px;
