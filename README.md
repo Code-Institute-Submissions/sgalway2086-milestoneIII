@@ -76,3 +76,11 @@ For a mobile user
 
 ## Favicon.cc
 * This site was used to make the favicon
+
+# Features
+
+* Use of media queries to resize the screen correctly
+* Search function for the user to search for a specific recipe that might interest them
+* A randomizer function to add a fun element to the user and due to its uniqueness keep users returning for when they’re unsure of what they want for a meal
+* Ability to create, login, and logout of an account
+* Using the aforementioned account, find previously submitted recipes and edit or delete
