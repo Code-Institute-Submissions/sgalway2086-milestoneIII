@@ -146,6 +146,26 @@ a i{
     margin-bottom: 32px;
     margin-top: 32px;
     overflow: auto;
+    min-height: 60vh;
+}
+
+.login_reg_style{
+    background-color: #e6e6e6;
+    width: 60%;
+    padding: 32px 48px;
+    margin: auto;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    overflow: auto;
+    min-height: 60vh;
+}
+
+.login_reg_style form{
+    text-align: center;
+}
+
+#searchFormDiv{
+    text-align: center;
 }
 
 #mainSubmit{
@@ -155,10 +175,14 @@ a i{
 }
 
 .resultRecipe{
-    padding: 48px 1%;
+    padding: 48px 1% 0px 1%;
     width: 48%;
     float: left;
     display: block;
+}
+
+#resultCounter{
+    padding-top: 24px;
 }
 
 .resultRecipe a{
@@ -235,70 +259,82 @@ header h1{
     color:#e6e6e6
 }
 
+.smallLabel{
+    display: none;
+}
 
 @media screen and (max-width: 1000px){
     nav a{
         margin-left: 16px;
    }
+   #largenav{
+    visibility: hidden;
+    height: 0px;
+}
+#smallnav{
+    visibility: visible;
+}
+.drop-bar-button span{
+    display:block;
+}
+.drop-bar-option{
+    font-size: 24px;
+    padding: 10px 5px 0px 5px;
+    background-color: #f2f2f2;
+    visibility: hidden;
+}
+.drop-bar-button{
+    width: 50px;
+    font-size: 30px;
+    padding-left:10px;
+    position: absolute;
+    top: 9px;
+    right: 5px;
+    float: left;
+}
+.drop-bar-button i{
+    color: #fafafa;
+    margin-top: 16px;
+}
+span:hover .header-fa{
+    background-color:#ff1a1a;
+}
+.drop-bar-button:hover .drop-bar{
+    width: 170px;
+    height: 160px;
+    display: inline-block;
+}
+.drop-bar-button:hover .drop-bar-option{
+    width: 170px;
+    height: 40px;
+    display: block;
+    position: relative;
+    top:18px;
+    background-color: #0f0f0f;
+    right:141px;
+    float: left;
+    visibility: visible;
+    text-decoration: none;
+    color: #f0f0f0;
+}
+.drop-bar-option:hover{
+    background-color: #cccccc;
+}
 }
 
 @media screen and (max-width: 800px){
+    #profileDiv{
+        width: 80%;
+    }
+
     #mainDescription{
         width: 80%;
     }
-    #largenav{
-        visibility: hidden;
-        height: 0px;
+
+    #searchPage{
+        width: 60%;
     }
-    #smallnav{
-        visibility: visible;
-    }
-    .drop-bar-button span{
-        display:block;
-    }
-    .drop-bar-option{
-        font-size: 24px;
-        padding: 10px 5px 0px 5px;
-        background-color: #f2f2f2;
-        visibility: hidden;
-    }
-    .drop-bar-button{
-        width: 50px;
-        font-size: 30px;
-        padding-left:10px;
-        position: absolute;
-        top: 9px;
-        right: 5px;
-        float: left;
-    }
-    .drop-bar-button i{
-        color: #fafafa;
-        margin-top: 16px;
-    }
-    span:hover .header-fa{
-        background-color:#ff1a1a;
-    }
-    .drop-bar-button:hover .drop-bar{
-        width: 170px;
-        height: 160px;
-        display: inline-block;
-    }
-    .drop-bar-button:hover .drop-bar-option{
-        width: 170px;
-        height: 40px;
-        display: block;
-        position: relative;
-        top:18px;
-        background-color: #0f0f0f;
-        right:141px;
-        float: left;
-        visibility: visible;
-        text-decoration: none;
-        color: #f0f0f0;
-    }
-    .drop-bar-option:hover{
-        background-color: #cccccc;
-    }
+    
 
     #recentAdditions{
         width: 80%;
@@ -316,6 +352,18 @@ header h1{
         width: 100%;
     }
 
+    .resultRecipe img{
+        width:98%;
+    }
+
+    #searchPage{
+        width: 80%;
+    }
+
+    .login_reg_style{
+        width: 80%;
+    }
+
     #rightRecentDiv{
         width: 100%;
         margin: 0px;
@@ -328,12 +376,35 @@ header h1{
 }
 
 @media screen and (max-width: 600px){
+    .submitInput{
+        width: 80%;
+    }
+
+    .submitInputSmaller{
+        width: 70%;
+    }
+
     #recipeDiv{
         margin: 0% 5%;
         width: 80%;
         padding: 5%
     }
+
+    #profileDiv{
+        width: 80%;
+        padding: 2%;
+    }
     #mainDescription{
+        width: 80%;
+        padding: 2%;
+    }
+
+    #searchPage{
+        width: 80%;
+        padding: 2%;
+    }
+
+    .login_reg_style{
         width: 80%;
         padding: 2%;
     }
@@ -344,6 +415,11 @@ header h1{
     }
 
     .recentRecipes{
+        width: 96%;
+        padding: 2%;
+    }
+
+    .resultRecipe{
         width: 96%;
         padding: 2%;
     }
@@ -372,4 +448,21 @@ header h1{
         text-decoration: none;
         color: #f0f0f0;
     }
+
+    .smallLabel{
+        display: block;
+    }
+
+    .largeLabel{
+        display: none;
+    }
+
+    .submitInput{
+        width: 96%;
+    }
+
+    .submitInputSmaller{
+        width: 78%;
+    }
 }
+

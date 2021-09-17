@@ -6,7 +6,7 @@ $(document).ready(function() {
 	$(add_button).click(function(e){
 		e.preventDefault();
 			y++;
-			$(ingredientwrapper).append('<div><input type="text" name="ingredient"><a href="#" class="remove_field" required><i class="fas fa-trash-alt"></i></a></div>');
+			$(ingredientwrapper).append('<div><input class = "submitInputSmaller" type="text" name="ingredient"><a href="#" class="remove_field" required><i class="fas fa-trash-alt"></i></a></div>');
 	});
 	
 	$(ingredientwrapper).on("click",".remove_field", function(e){
@@ -22,7 +22,7 @@ $(document).ready(function() {
 	$(add_button).click(function(e){
 		e.preventDefault();
 			x++;
-			$(stepwrapper ).append('<div><input type="text" name="step"><a href="#" class="remove_field" required><i class="fas fa-trash-alt"></i></a></div>');
+			$(stepwrapper ).append('<div><input class = "submitInputSmaller" type="text" name="step"><a href="#" class="remove_field" required><i class="fas fa-trash-alt"></i></a></div>');
 	});
 	
 	$(stepwrapper ).on("click",".remove_field", function(e){

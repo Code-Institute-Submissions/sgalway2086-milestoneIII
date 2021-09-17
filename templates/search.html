@@ -14,7 +14,7 @@
             <input id="user_input" type="text" name="search_Query" value="{{ search }}" required>
             <input id="search_submit" type="submit" value="Submit">
         </form>   
-        <a href="/randomrecipe"><button id = "randomRecipe">I'm Feeling Creative</button></a>
+        <a href="/randomrecipe"><button id = "randomRecipe">Randomiser</button></a>
     </div>
     {% for j in range(counter) %}
     <div class = "resultRecipe"><a href="/recipes/{{  anchorUrl[j] }}">
@@ -23,7 +23,7 @@
         {{  descriptionArray[j] }}
     </a>
     </div>
-    {% endfor %}<br><br>
+    {% endfor %}
     <div id = "resultCounter">
         <p>{{ searchCounter }}</p>
     </div>

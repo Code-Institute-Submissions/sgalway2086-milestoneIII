@@ -4,18 +4,18 @@
   <h2>Add your recipe here:</h2><br>
   <form action="/submit" method = "POST">
       <label for="title">Recipe Title:</label><br>
-      <input type="text" id="title" name="title"><br><br>
+      <input class = "submitInput" type="text" id="title" name="title"><br><br>
       <label for="image">Add Image URL:</label><br>
-      <input type="text" id="image" name="image"><br><br>
+      <input class = "submitInput" type="text" id="image" name="image"><br><br>
       <label for="description">Short description:</label><br>
-      <textarea type="text" id="description" name="description"></textarea><br><br>
+      <textarea class = "submitInput" type="text" id="description" name="description"></textarea><br><br>
         <div class="input_ingredients_wrap">
           <button class="add_ingredient_button">Add Ingredient</button>
-          <div><input type="text" name="ingredient"></div>
+          <div><input class = "submitInputSmaller" type="text" name="ingredient"></div>
         </div><br>
         <div class="input_steps_wrap">
           <button class="add_step_button">Add Step</button>
-          <div><input type="text" name="step"></div>
+          <div><input class = "submitInputSmaller" type="text" name="step"></div>
         </div>
       <br>
         <input type="submit" value="Add Recipe">
