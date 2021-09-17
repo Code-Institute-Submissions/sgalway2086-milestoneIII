@@ -1,511 +1,433 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap');
-
-*{
-    margin: 0;
-    font-family: 'Kaisei Tokumin', serif;
+ @import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap');
+ *{
+     margin: 0;
+     font-family: 'Kaisei Tokumin', serif;
 }
-
-body{
-    background-color: #f0f0f0;
+ body{
+     background-color: #f0f0f0;
 }
-
-.recentRecipes{
-    width: 48%;
-    float: left;
-    margin: 1%;
+ .recentRecipes{
+     width: 48%;
+     float: left;
+     margin: 1%;
 }
-
-.recentRecipes img{
-    width: 100%;
+ .recentRecipes img{
+     width: 100%;
 }
-
-#rightRecentDiv{
-    width: 96%;
-    margin: 0px 0px 0px 2%;
+ #rightRecentDiv{
+     width: 96%;
+     margin: 0px 0px 0px 2%;
 }
-
-#leftRecentDiv{
-    width: 96%;
-    margin: 0px 2%;
+ #leftRecentDiv{
+     width: 96%;
+     margin: 0px 2%;
 }
-
-.drop-bar{
-    display: none;
+ .drop-bar{
+     display: none;
 }
-
-.drop-bar-option{
-    display: none;
+ .drop-bar-option{
+     display: none;
 }
-
-#smallnav{
-    visibility: hidden;
-    height: 0px;
+ #smallnav{
+     visibility: hidden;
+     height: 0px;
 }
-
-header{
-    color: #f0f0f0;
-    background-color: #0f0f0f;
-    font-size: 32px;
+ header{
+     color: #f0f0f0;
+     background-color: #0f0f0f;
+     font-size: 32px;
 }
-
-header h1{
-    margin-left: 8px;
-    display: inline-block;
-    font-family: 'Dancing Script', cursive;
+ header h1{
+     margin-left: 8px;
+     display: inline-block;
+     font-family: 'Dancing Script', cursive;
 }
-
-#largenav{
-    float: right;
-    margin: 16px 16px 0px 0px;
-    font-size: 24px;
+ #largenav{
+     float: right;
+     margin: 16px 16px 0px 0px;
+     font-size: 24px;
 }
-#largenav a{
-    color: #f0f0f0;
-    text-decoration: none;
-    margin-left: 24px;
+ #largenav a{
+     color: #f0f0f0;
+     text-decoration: none;
+     margin-left: 24px;
 }
-
-#largenav a:hover{
-    text-decoration: underline;
+ #largenav a:hover{
+     text-decoration: underline;
 }
-
-#mainDescription{
-    background-color: #e6e6e6;
-    width: 60%;
-    padding: 32px 48px;
-    margin: auto;
-    margin-bottom: 32px;
-    margin-top: 32px;
+ #mainDescription{
+     background-color: #e6e6e6;
+     width: 60%;
+     padding: 32px 48px;
+     margin: auto;
+     margin-bottom: 32px;
+     margin-top: 32px;
 }
-
-#recentAdditions{
-    background-color: #e6e6e6;
-    width: 60%;
-    padding: 32px 48px;
-    margin: auto;
-    overflow: hidden;
-    margin-bottom: 32px;
+ #recentAdditions{
+     background-color: #e6e6e6;
+     width: 60%;
+     padding: 32px 48px;
+     margin: auto;
+     overflow: hidden;
+     margin-bottom: 32px;
 }
-
-#recentAdditions a{
-    color: #0f0f0f;
+ #recentAdditions a{
+     color: #0f0f0f;
 }
-
-.hoverRecentRecipe:hover{
-    text-decoration: underline;
+ .hoverRecentRecipe:hover{
+     text-decoration: underline;
 }
-
-footer{
-    background-color: #0f0f0f;
-    overflow: auto;
+ footer{
+     background-color: #0f0f0f;
+     overflow: auto;
 }
-
-#footerbox{
-    float: right;
-    margin: 10px;
+ #footerbox{
+     float: right;
+     margin: 10px;
 }
-
-#footerbox a{
-    color: #f0f0f0;
-    font-size: 30px;
+ #footerbox a{
+     color: #f0f0f0;
+     font-size: 30px;
 }
-
-a i{
-    margin: 5px 10px;
+ a i{
+     margin: 5px 10px;
 }
-
-#recipeDiv{
-    background-color: #e6e6e6;
-    width: 60%;
-    padding: 32px 48px;
-    margin: auto;
-    margin-top: 32px;
-    margin-bottom: 32px;
+ #recipeDiv{
+     background-color: #e6e6e6;
+     width: 60%;
+     padding: 32px 48px;
+     margin: auto;
+     margin-top: 32px;
+     margin-bottom: 32px;
 }
-
-#recipeDiv img{
-    width: 100%;
+ #recipeDiv img{
+     width: 100%;
 }
-
-#submitRecipe{
-    background-color: #e6e6e6;
-    width: 60%;
-    padding: 32px 48px;
-    margin: auto;
-    margin-bottom: 32px;
-    margin-top: 32px;
+ #submitRecipe{
+     background-color: #e6e6e6;
+     width: 60%;
+     padding: 32px 48px;
+     margin: auto;
+     margin-bottom: 32px;
+     margin-top: 32px;
 }
-
-#searchPage{
-    background-color: #e6e6e6;
-    width: 60%;
-    padding: 32px 48px;
-    margin: auto;
-    margin-bottom: 32px;
-    margin-top: 32px;
-    overflow: auto;
-    min-height: 60vh;
+ #searchPage{
+     background-color: #e6e6e6;
+     width: 60%;
+     padding: 32px 48px;
+     margin: auto;
+     margin-bottom: 32px;
+     margin-top: 32px;
+     overflow: auto;
+     min-height: 60vh;
 }
-
-#searchFormDiv{
-    text-align: center;
+ #searchFormDiv{
+     text-align: center;
 }
-
-#mainSubmit{
-    font-size: 20px;
-    display: block;
-    text-align: center;
+ #mainSubmit{
+     font-size: 20px;
+     display: block;
+     text-align: center;
 }
-
-.resultRecipe{
-    padding: 48px 1% 0px 1%;
-    width: 48%;
-    float: left;
-    display: block;
+ .resultRecipe{
+     padding: 48px 1% 0px 1%;
+     width: 48%;
+     float: left;
+     display: block;
 }
-
-#resultCounter{
-    padding-top: 24px;
+ #resultCounter{
+     padding-top: 24px;
 }
-
-.resultRecipe a{
-    text-decoration: none;
-    color: #0f0f0f;
+ .resultRecipe a{
+     text-decoration: none;
+     color: #0f0f0f;
 }
-
-.resultRecipe a:hover{
-    text-decoration: underline;
+ .resultRecipe a:hover{
+     text-decoration: underline;
 }
-
-.resultRecipe img{
-    width: 96%;
+ .resultRecipe img{
+     width: 96%;
 }
-
-#searchFormDiv{
-    width: 100%;
+ #searchFormDiv{
+     width: 100%;
 }
-
-#searchFormDiv form{
-    display: inline;
+ #searchFormDiv form{
+     display: inline;
 }
-
-#searchFormDiv a{
-    display: inline;
+ #searchFormDiv a{
+     display: inline;
 }
-
-#resultCounter{
-    width: 100%;
-    float:left;
+ #resultCounter{
+     width: 100%;
+     float:left;
 }
-
-#profileDiv{
-    background-color: #e6e6e6;
-    width: 60%;
-    padding: 32px 48px;
-    margin: auto;
-    margin-bottom: 32px;
-    margin-top: 32px;
-    overflow: auto;
+ #profileDiv{
+     background-color: #e6e6e6;
+     width: 60%;
+     padding: 32px 48px;
+     margin: auto;
+     margin-bottom: 32px;
+     margin-top: 32px;
+     overflow: auto;
 }
-
-.deletebutton{
-    display: block;
-    width: 46%;
-    margin: 0 2% 0 0;
-    height: 25px;
-    background: #e13737;
-    padding: 10px 0px;
-    text-align: center;
-    border-radius: 5px;
-    color: #e6e6e6;
-    font-weight: bold;
-    line-height: 25px;
-    float: left;
+ .deletebutton{
+     display: block;
+     width: 46%;
+     margin: 0 2% 0 0;
+     height: 25px;
+     background: #e13737;
+     padding: 10px 0px;
+     text-align: center;
+     border-radius: 5px;
+     color: #e6e6e6;
+     font-weight: bold;
+     line-height: 25px;
+     float: left;
 }
-
-.editbutton{
-    display: block;
-    width: 46%;
-    margin: 0 2%;
-    height: 25px;
-    background: #37a6e1;
-    padding: 10px 0px;
-    text-align: center;
-    border-radius: 5px;
-    color: #e6e6e6;
-    font-weight: bold;
-    line-height: 25px;
-    float:left;
+ .editbutton{
+     display: block;
+     width: 46%;
+     margin: 0 2%;
+     height: 25px;
+     background: #37a6e1;
+     padding: 10px 0px;
+     text-align: center;
+     border-radius: 5px;
+     color: #e6e6e6;
+     font-weight: bold;
+     line-height: 25px;
+     float:left;
 }
-
-header h1{
-    color:#e6e6e6
+ header h1{
+     color:#e6e6e6 
 }
-
-.loginInputs{
-    height: 24px;
-    border-radius:12px;
-    width: 40%;
-    
+ .loginInputs{
+     height: 24px;
+     border-radius:12px;
+     width: 40%;
 }
-
-.login_reg_style{
-    background-color: #e6e6e6;
-    width: 60%;
-    padding: 32px 48px;
-    margin: auto;
-    margin-bottom: 32px;
-    margin-top: 24px;
-    overflow: auto;
-    min-height: 75vh;
+ .login_reg_style{
+     background-color: #e6e6e6;
+     width: 60%;
+     padding: 32px 48px;
+     margin: auto;
+     margin-bottom: 32px;
+     margin-top: 24px;
+     overflow: auto;
+     min-height: 75vh;
 }
-
-.loginWrap{
-    margin-top: 20%;
+ .loginWrap{
+     margin-top: 20%;
 }
-
-.login_reg_style form{
-    text-align: center;
-    margin-top:20%;
+ .login_reg_style form{
+     text-align: center;
+     margin-top:20%;
 }
-
-.loginInputs{
-    width: 40%;
-    height: 24px;
-    border-radius:12px;
+ .loginInputs{
+     width: 40%;
+     height: 24px;
+     border-radius:12px;
 }
-
-.submitInputSmaller{
-    width: 50%;
+ .submitInputSmaller{
+     width: 50%;
 }
-
-.submitInput{
-    width: 50%;
+ .submitInput{
+     width: 50%;
 }
-
-@media screen and (max-width: 1000px){
-    nav a{
-        margin-left: 16px;
-   }
-   #largenav{
-    visibility: hidden;
-    height: 0px;
-}
-#smallnav{
-    visibility: visible;
-}
-.drop-bar-button span{
-    display:block;
-}
-.drop-bar-option{
-    font-size: 24px;
-    padding: 10px 5px 0px 5px;
-    background-color: #f2f2f2;
-    visibility: hidden;
-}
-.drop-bar-button{
-    width: 50px;
-    font-size: 30px;
-    padding-left:10px;
-    position: absolute;
-    top: 9px;
-    right: 5px;
-    float: left;
-}
-.drop-bar-button i{
-    color: #fafafa;
-    margin-top: 16px;
-}
-span:hover .header-fa{
-    background-color:#ff1a1a;
-}
-.drop-bar-button:hover .drop-bar{
-    width: 170px;
-    height: 160px;
-    display: inline-block;
-}
-.drop-bar-button:hover .drop-bar-option{
-    width: 170px;
-    height: 40px;
-    display: block;
-    position: relative;
-    top:18px;
-    background-color: #0f0f0f;
-    right:141px;
-    float: left;
-    visibility: visible;
-    text-decoration: none;
-    color: #f0f0f0;
-}
-.drop-bar-option:hover{
-    background-color: #cccccc;
-}
-.loginInputs{
-    width: 50%;
-    height: 24px;
-    border-radius:12px;
-}
-.loginWrap{
-    margin-top: 30%;
-}
-}
-
-@media screen and (max-width: 800px){
-    #profileDiv{
-        width: 80%;
+ @media screen and (max-width: 1000px){
+     nav a{
+         margin-left: 16px;
     }
-
-    #mainDescription{
-        width: 80%;
+     #largenav{
+         visibility: hidden;
+         height: 0px;
     }
-
-    #searchPage{
-        width: 60%;
+     #smallnav{
+         visibility: visible;
     }
-    
-
-    #recentAdditions{
-        width: 80%;
+     .drop-bar-button span{
+         display:block;
     }
-
-    .recentRecipes{
-        width: 100%;
+     .drop-bar-option{
+         font-size: 24px;
+         padding: 10px 5px 0px 5px;
+         background-color: #f2f2f2;
+         visibility: hidden;
     }
-
-    .recentRecipes img{
-        width:98%;
+     .drop-bar-button{
+         width: 50px;
+         font-size: 30px;
+         padding-left:10px;
+         position: absolute;
+         top: 9px;
+         right: 5px;
+         float: left;
     }
-
-    .resultRecipe{
-        width: 100%;
+     .drop-bar-button i{
+         color: #fafafa;
+         margin-top: 16px;
     }
-
-    .resultRecipe img{
-        width:98%;
+     span:hover .header-fa{
+         background-color:#ff1a1a;
     }
-
-    #searchPage{
-        width: 80%;
+     .drop-bar-button:hover .drop-bar{
+         width: 170px;
+         height: 160px;
+         display: inline-block;
     }
-
-    .login_reg_style{
-        width: 80%;
+     .drop-bar-button:hover .drop-bar-option{
+         width: 170px;
+         height: 40px;
+         display: block;
+         position: relative;
+         top:18px;
+         background-color: #0f0f0f;
+         right:141px;
+         float: left;
+         visibility: visible;
+         text-decoration: none;
+         color: #f0f0f0;
     }
-
-    #rightRecentDiv{
-        width: 100%;
-        margin: 0px;
+     .drop-bar-option:hover{
+         background-color: #cccccc;
     }
-    
-    #leftRecentDiv{
-        width: 100%;
-        margin: 0px;
+     .loginInputs{
+         width: 50%;
+         height: 24px;
+         border-radius:12px;
+    }
+     .loginWrap{
+         margin-top: 30%;
     }
 }
-
-@media screen and (max-width: 600px){
-    .submitInput{
-        width: 80%;
+ @media screen and (max-width: 800px){
+     #profileDiv{
+         width: 80%;
     }
-
-    .submitInputSmaller{
-        width: 70%;
+     #mainDescription{
+         width: 80%;
     }
-
-    #recipeDiv{
-        margin: 0% 5%;
-        width: 80%;
-        padding: 5%
+     #searchPage{
+         width: 60%;
     }
-
-    #profileDiv{
-        width: 80%;
-        padding: 2%;
+     #recentAdditions{
+         width: 80%;
     }
-    #mainDescription{
-        width: 80%;
-        padding: 2%;
+     .recentRecipes{
+         width: 100%;
     }
-
-    #searchPage{
-        width: 80%;
-        padding: 2%;
+     .recentRecipes img{
+         width:98%;
     }
-
-    .login_reg_style{
-        width: 80%;
-        padding: 2%;
+     .resultRecipe{
+         width: 100%;
     }
-
-    #recentAdditions{
-        width: 80%;
-        padding: 2%;
+     .resultRecipe img{
+         width:98%;
     }
-
-    .recentRecipes{
-        width: 96%;
-        padding: 2%;
+     #searchPage{
+         width: 80%;
     }
-
-    .resultRecipe{
-        width: 96%;
-        padding: 2%;
+     .login_reg_style{
+         width: 80%;
+    }
+     #rightRecentDiv{
+         width: 100%;
+         margin: 0px;
+    }
+     #leftRecentDiv{
+         width: 100%;
+         margin: 0px;
     }
 }
-
-@media screen and (max-width: 450px){
-    header{
-      font-size: 24px;
+ @media screen and (max-width: 600px){
+     .submitInput{
+         width: 80%;
     }
-    .drop-bar-button{
-        position: absolute;
-        top: -2px;
-        right: 5px;
-        float: left;
+     .submitInputSmaller{
+         width: 70%;
     }
-    .drop-bar-button:hover .drop-bar-option{
-        width: 170px;
-        height: 40px;
-        display: block;
-        position: relative;
-        top:8px;
-        background-color: #0f0f0f;
-        right:141px;
-        float: left;
-        visibility: visible;
-        text-decoration: none;
-        color: #f0f0f0;
+     #recipeDiv{
+         margin: 0% 5%;
+         width: 80%;
+         padding: 5% 
     }
-
-    .submitInput{
-        width: 96%;
+     #profileDiv{
+         width: 80%;
+         padding: 2%;
     }
-
-    .submitInputSmaller{
-        width: 78%;
+     #mainDescription{
+         width: 80%;
+         padding: 2%;
     }
-
-    .login_reg_style{
-        background-color: #e6e6e6;
-        width: 60%;
-        padding: 32px 48px;
-        margin: auto;
-        margin-bottom: 32px;
-        margin-top: 24px;
-        overflow: auto;
-        min-height: 75vh;
+     #searchPage{
+         width: 80%;
+         padding: 2%;
     }
-    
-    .login_reg_style form{
-        text-align: center;
+     .login_reg_style{
+         width: 80%;
+         padding: 2%;
     }
-
-    .loginInputs{
-        width: 90%;
-        height: 24px;
-        border-radius:12px;
+     #recentAdditions{
+         width: 80%;
+         padding: 2%;
+    }
+     .recentRecipes{
+         width: 96%;
+         padding: 2%;
+    }
+     .resultRecipe{
+         width: 96%;
+         padding: 2%;
     }
 }
-
+ @media screen and (max-width: 450px){
+     header{
+         font-size: 24px;
+    }
+     .drop-bar-button{
+         position: absolute;
+         top: -2px;
+         right: 5px;
+         float: left;
+    }
+     .drop-bar-button:hover .drop-bar-option{
+         width: 170px;
+         height: 40px;
+         display: block;
+         position: relative;
+         top:8px;
+         background-color: #0f0f0f;
+         right:141px;
+         float: left;
+         visibility: visible;
+         text-decoration: none;
+         color: #f0f0f0;
+    }
+     .submitInput{
+         width: 96%;
+    }
+     .submitInputSmaller{
+         width: 78%;
+    }
+     .login_reg_style{
+         background-color: #e6e6e6;
+         width: 60%;
+         padding: 32px 48px;
+         margin: auto;
+         margin-bottom: 32px;
+         margin-top: 24px;
+         overflow: auto;
+         min-height: 75vh;
+    }
+     .login_reg_style form{
+         text-align: center;
+    }
+     .loginInputs{
+         width: 90%;
+         height: 24px;
+         border-radius:12px;
+    }
+}
+ 
