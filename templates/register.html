@@ -1,28 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 <div class = "login_reg_style">
+    <div class = "loginWrap">
     <h3>Register Account</h3>
     <form method = "POST" action = "/register">
         <div>
-            <div>
-                <label class = "smallLabel" for = "username">Username</label>
-                <i class="fa fa-user-plus" aria-hidden="true"></i>
-                <input id = "username" name = "username" type = "text" pattern = "^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required>
-                <label class = "largeLabel" for = "username">Username</label>
-            </div>
+            <label class = "smallLabel" for = "username">Username</label><br>
+                <input class = "loginInputs" id = "username" name = "username" type = "text" pattern = "^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required><br>
         </div>
         <div>
-            <div>
-                <label class = "smallLabel" for = "password">Password</label>
-                <i class="fa fa-user-lock" aria-hidden="true"></i>
-                <input id = "password" name = "password" type = "password" pattern = "^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required>
-                <label class = "largeLabel" for = "password">Password</label><br>
-            </div>
+            <label class = "smallLabel" for = "password">Password</label><br>
+                <input class = "loginInputs" id = "password" name = "password" type = "password" pattern = "^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required><br>
         </div>
         <div>
-            <button type = "submit">Register<i class="fas fa-sign-in-alt"></i></button>
+            <button type = "submit">Login<i class="fas fa-sign-in-alt"></i></button>
             <p>Already registered?<a href="/login">Log in</a></p>
+            
         </div>
     </form>
+</div>
 </div>
 {% endblock %} 
