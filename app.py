@@ -1,7 +1,8 @@
 import os
 import random
 from flask import (
-    Flask, flash, render_template, redirect, request, session, request, url_for)
+    Flask, flash, render_template, 
+    redirect, request, session, request, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -138,7 +139,6 @@ def register():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
@@ -146,10 +146,6 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
-        print("register successful")
-        print("register successful")
-        print("register successful")
-        print("register successful")
         mongo.db.users.insert_one(register)
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful")
@@ -224,43 +220,85 @@ def delete_Recipe(recipe_id):
     return redirect(url_for('profile', username=session['user']))
 
 
-@app.route("/editRecipe/<recipe_id>")
+@app.route("/editRecipe/<recipe_id>", methods=['POST', 'GET'])
 def edit(recipe_id):
-    edits = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    stepsStringForChange = edits.get("steps")
-    stepsFinished = False
-    unpackedStepsString = []
-    while stepsFinished is False:
-        num1 = stepsStringForChange.find('{space}')
-        num2 = num1 + 7
-        instruction = stepsStringForChange[0:num1]
-        remove = stepsStringForChange[0:num2]
-        unpackedStepsString.append(instruction)
-        stepsStringForChange = stepsStringForChange.replace(remove, "")
-        if len(stepsStringForChange) == 0:
-            stepsFinished = True
-        else:
-            continue
-    ingredientsStringChange = edits.get("ingredients")
-    unpackedIngredientsString = []
-    ingredientsFinished = False
-    while ingredientsFinished is False:
-        num1 = ingredientsStringChange.find('{space}')
-        num2 = num1 + 7
-        instruction = ingredientsStringChange[0:num1]
-        remove = ingredientsStringChange[0:num2]
-        unpackedIngredientsString.append(instruction)
-        ingredientsStringChange = ingredientsStringChange.replace(remove, "")
-        if len(ingredientsStringChange) == 0:
-            ingredientsFinished = True
-            return render_template("edits.html", edits=edits,
-            unpackedStepsString=unpackedStepsString,
-            unpackedIngredientsString=unpackedIngredientsString)
-        else:
-            continue
+    if session.get("user") is not None:
+        to_Edit = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        check = to_Edit.get("uploader")
+        print(check)
+        print(username)
+        if username == check:
+            stepsStringForChange = to_Edit.get("steps")
+            stepsFinished = False
+            unpackedStepsString = []
+            while stepsFinished is False:
+                num1 = stepsStringForChange.find('{space}')
+                num2 = num1 + 7
+                instruction = stepsStringForChange[0:num1]
+                remove = stepsStringForChange[0:num2]
+                unpackedStepsString.append(instruction)
+                stepsStringForChange = stepsStringForChange.replace(remove, "")
+                if len(stepsStringForChange) == 0:
+                    stepsFinished = True
+                else:
+                    continue
+                ingredientsStringChange = to_Edit.get("ingredients")
+                unpackedIngredientsString = []
+                ingredientsFinished = False
+                while ingredientsFinished is False:
+                    num1 = ingredientsStringChange.find('{space}')
+                    num2 = num1 + 7
+                    instruction = ingredientsStringChange[0:num1]
+                    remove = ingredientsStringChange[0:num2]
+                    unpackedIngredientsString.append(instruction)
+                    ingredientsStringChange = ingredientsStringChange.replace(remove, "")
+                    if len(ingredientsStringChange) == 0:
+                        ingredientsFinished = True
+                        return render_template("edits.html", edits=to_Edit,
+                        unpackedStepsString=unpackedStepsString,
+                        unpackedIngredientsString=unpackedIngredientsString)
+                    else:
+                        continue
+        flash("You do not have access to this page")
+        return render_template("home.html")
+    return render_template("login.html")
 
 
-    return redirect(url_for('profile', username=session['user']))
+@app.route("/editRecipeSend/<recipe_id>", methods=['POST', 'GET'])
+def send_Edit_To_Db(recipe_id):
+    if request.method == "POST":
+        to_Edit = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        check = to_Edit.get("uploader")
+        id = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})["_id"]
+        print(check)
+        print(username)
+        if username == check:
+            data = {}
+            stepsdatabase = ''
+            ingredientsDataBase = ''
+            steps = request.form.getlist('step')
+            for i in steps:
+                stepsdatabase += i + "{space}"
+            ingredients = request.form.getlist('ingredient')
+            for i in ingredients:
+                ingredientsDataBase += i + "{space}"
+            data = {
+                "title":request.form.get('title'),
+                "image":request.form.get('image'),
+                "description":request.form.get('description'),
+                "ingredients":ingredientsDataBase,
+                "steps":stepsdatabase,
+                "uploader":username
+            }
+            mongo.db.recipes.update({'_id':id}, {"$set": data}, upsert=False)
+            return redirect(url_for('profile', username=session['user']))
+        flash("You do not have access to this page")
+        return render_template("home.html")
+
 
 
 @app.route("/submit", methods=['POST', 'GET'])

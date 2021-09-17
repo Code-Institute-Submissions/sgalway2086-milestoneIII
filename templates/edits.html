@@ -1,25 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 <div id = "recipeDiv">
-    <form>
+    <form action="/editRecipeSend/{{edits._id}}" method = "POST">
         <label for = "title">Title:</label><br>
-        <input name= "title" value = "{{ edits.title }}"><br><br>
+        <input name= "title" value = "{{ edits.title }}"><br>
         <label for = "image">Image Url:</label><br>
-        <input name = "image" value = "{{ edits.image }}"><br><br>
+        <input name = "image" value = "{{ edits.image }}"><br>
         <label for = "description">Description:</label><br>
         <textarea name = "description">{{ edits.description }}</textarea><br><br>
         <h3>Ingredients</h3>
-        <ul>
+        <div class="input_ingredients_wrap">
+            <button class="add_ingredient_button">Add Ingredient</button>
             {% for i in unpackedIngredientsString %}
-            <li><input type = "text" name = "steps" value ="{{ i }}"></li>
+            <div><input type="text" name="ingredient" value = "{{ i }}"><a href="#" class="remove_field" required><i class="fas fa-trash-alt"></i></a></div>
             {% endfor %}
-        </ul><br>
+        </div><br>
         <h3>Steps</h3>
-        <ol>
+        <div class="input_steps_wrap">
+            <button class="add_step_button">Add Step</button>
             {% for j in unpackedStepsString %}
-            <li><textarea name = "ingredients">{{ j }}</textarea></li>
+            <div><input type="text" name="step" value = "{{ j }}"><a href="#" class="remove_field" required><i class="fas fa-trash-alt"></i></a></div>
             {% endfor %}
-        </ol>
+        </div>
         <input type= "submit">
     </form>
 </div>
