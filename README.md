@@ -198,7 +198,20 @@ Switch back to heroku
 7. Select repository
 8. Set to deploy automatically
 
+## Bugs Fixed
+1. There was originally a bug in which the string created by the submission form would not generate correctly and removed too little of the string leaving undesirable characters (specifically a ' } ') from the end of the {space} string that was removed. This was fixed simply by increasing the removal by 1 anad then applying this to other parts of the string removal.
 
+2. There were a few bugs resulting from a previous submission system, such as for example when adding another step to the form, originally it would reload the page thus losing the values from some other forms. THis was solved with a rather rudimentary fix using a second form, but this was cumbersome and was eventually switched over to a much more efficient javascript function
+
+3. The edit form could be accessed with just a link without the need to be logged in. This was resolved by adding a check to see whether the session had a user property and matching it to the recipes uploader, allowing if this was the case.
+
+4. At first the javascript ran into some difficulties with operating, and the step and ingredient properties were not obtainable within the python code. This was resolved by using a make list function, as with multiple of the same name, using a basic get function could not work.
+
+## Existing Bugs
+
+1. There is currently a small bug on the mobile version with the nav bar where if the search button is clicked the anchor element highlighted on mobile devices seems to take on a rather odd shape but this does not affect performance and is purely a visual bug.
+
+2. The submit form can sometimes miss the very last of the dynamic forms if it is still selected when submit is clicked though this was not replicable reliably in testing.
 
 # Credits
 ## content
