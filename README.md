@@ -144,3 +144,14 @@ For a mobile user
 * For a mobile user, the site can be navigated very smoothly and with a small collapsable navbar, which proves to be very useful for navigation, and all the sites functions remain perfecty operational and aesthetically pleasing on mobile.
 
 
+# Testing
+
+## HTML Validation
+
+All the HTML was run through the w3c validator, without showing any errors unrelated to the the present jinja code (which is normal as the validators are not designed to parse code with the jinja code. Nothing related to the html within the nine pages proved to be problematic.
+
+## CSS Validation
+
+The CSS passed without issue
+
+![CSS Validation](/documentation/wireframes/validatedcss.png "CSS Validation")
