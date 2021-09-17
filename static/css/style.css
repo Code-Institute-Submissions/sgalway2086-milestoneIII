@@ -259,9 +259,6 @@ header h1{
     color:#e6e6e6
 }
 
-.smallLabel{
-    display: none;
-}
 
 @media screen and (max-width: 1000px){
     nav a{
@@ -447,14 +444,6 @@ span:hover .header-fa{
         visibility: visible;
         text-decoration: none;
         color: #f0f0f0;
-    }
-
-    .smallLabel{
-        display: block;
-    }
-
-    .largeLabel{
-        display: none;
     }
 
     .submitInput{
