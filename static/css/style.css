@@ -277,6 +277,14 @@ header h1{
     border-radius:12px;
 }
 
+.submitInputSmaller{
+    width: 50%;
+}
+
+.submitInput{
+    width: 50%;
+}
+
 @media screen and (max-width: 1000px){
     nav a{
         margin-left: 16px;
