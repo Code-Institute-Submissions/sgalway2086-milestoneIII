@@ -262,7 +262,7 @@ def edit(recipe_id):
                         ingredientsFinished = True
                         return render_template(
                             "edits.html", edits=to_Edit,
-                            unpackedStepString=unpackedStepString,
+                            unpackedStepsString=unpackedStepsString,
                             unpackedIngredientString=unpackedIngredientString)
                     else:
                         continue
