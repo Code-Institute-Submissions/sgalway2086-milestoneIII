@@ -203,26 +203,45 @@ All code was run through and linted carefully to be pep8 compliant and without e
 
 # Deployment
 
-## heroku Pages
+1. go to the terminal and install Pymongo, by typing pip3 install Flask-PyMongo
 
-The project was deployed to github pages in this way:
-1. Log into heroku
-2. Click new and create an app
-3. Add all details from the github repository to make its var config file complete to allow it interaction
+2. Add to the app.py with from flask import Flask, and from flask_PyMongo import PyMongo
 
-Switch to MongoDB
+3. Go to MongoDb, and log in
 
-1. Log into mongoDB
-2. Set up the database with all collections in place
-3. Create a key to place within the env.py file
+4. After login, go to create new cluster
 
-Switch back to heroku
+5. Set up the details of the desired app, choose a cloud provider and the region closest for the servers and then create cluster
 
-4. Add the key to heroku also with the password given
-5. Set up the database
-6. Connect to github
-7. Select repository
-8. Set to deploy automatically
+6. Click on the name of the deployed app and click collections
+
+7. When on the collections page, go and create the desired models in the 'collections' with field and values for the data
+
+8. Create all needed collections.
+
+9. Go to 'Database Access' and then click on 'Add new database user'
+
+10. Create the user, and save the information from it
+
+11. In env.py add the relevent credentials, the SECRET_KEY, MONGO_URI, and MONGO_DBNAME. Using os.environ.setdefault on the first two and os.environ.get on the last. Configure within app.py
+
+12. Go to heroku
+
+13. Sign in or create a user.
+
+14. Create an app, preferably with a similar name to that of the website and choose a region closest to you
+
+15. Go to 'deploy' section of heroku and then connect with the gitpod repository using 'deployment method' and adding the github account name and repository name
+
+16. Choose a branch to deploy (in this case the master) and click 'deploy branch'
+
+17. Select for it to do automatic deploys
+
+18. Create a procfile, and add "web: python app.py". It is very important that the procfile is not given a file type
+
+19. Use the terminal and install and then deploy to the heroku master branch
+
+
 
 ## Bugs Fixed
 1. There was originally a bug in which the string created by the submission form would not generate correctly and removed too little of the string leaving undesirable characters (specifically a ' } ') from the end of the {space} string that was removed. This was fixed simply by increasing the removal by 1 and then applying this to other parts of the string removal.
