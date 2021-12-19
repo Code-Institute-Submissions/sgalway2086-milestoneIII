@@ -48,40 +48,40 @@
 
 ## Index Page
 
-![Desktop Index Page](/documentation/wireframes/wireframe1.png "Desktop Index Page")
+![Desktop Index Page](/documentation/wireframe1.png "Desktop Index Page")
 
 ## Index Page Mobile
 
-![Mobile Index Page](/documentation/wireframes/wireframe8.png "Mobile Index Page")
+![Mobile Index Page](/documentation/wireframe8.png "Mobile Index Page")
 
 ## Submit Form
 
-![Submit Form](/documentation/wireframes/wireframe2.png "Submit Form")
+![Submit Form](/documentation/wireframe2.png "Submit Form")
 
 ## Submit Form In Action
 
-![Submit Form Used](/documentation/wireframes/wireframe3.png "Submit Form Used")
+![Submit Form Used](/documentation/wireframe3.png "Submit Form Used")
 
 ## Recipe Page
 
-![Recipe Page](/documentation/wireframes/wireframe4.png "Recipe Page")
+![Recipe Page](/documentation/wireframe4.png "Recipe Page")
 
 ## Search Page
 
-![Search Page](/documentation/wireframes/wireframe5.png "Search Page")
+![Search Page](/documentation/wireframe5.png "Search Page")
 
 ## Search Page Mobile
 
-![Search Page](/documentation/wireframes/wireframe9.png "Search Page Mobile")
+![Search Page](/documentation/wireframe9.png "Search Page Mobile")
 
 ## Profile
-![Profile](/documentation/wireframes/wireframe6.png "Profile")
+![Profile](/documentation/wireframe6.png "Profile")
 
 ## Profile Mobile
-![Profile Mobile](/documentation/wireframes/wireframe10.png "Profile Mobile")
+![Profile Mobile](/documentation/wireframe10.png "Profile Mobile")
 
 ## Login
-![Login](/documentation/wireframes/wireframe7.png "Login")
+![Login](/documentation/wireframe7.png "Login")
 
 
 # Technology Used
