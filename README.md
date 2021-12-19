@@ -162,13 +162,13 @@ All the HTML was run through the w3c validator, without showing any errors unrel
 
 ## CSS Validation
 
-The CSS passed without issue
+The CSS passed without issue, and was formatted using a formatter
 
 ![CSS Validation](/documentation/wireframes/validatedcss.png "CSS Validation")
 
 ## Python Validation
 
-All code was run through and linted carefully to be pep8 compliant and without error
+All code was run through and linted carefully to be pep8 compliant and without error, specific attention was paid to ensure that nothing was at the incorrect indentation to prevent any code related errors
 
 # Further Testing
 
@@ -182,7 +182,7 @@ All code was run through and linted carefully to be pep8 compliant and without e
 
 * Placement of buttons and options were examined thoroughly, to ensure they all work and do not cause any issues with navigating the files.
 
-* Database testing was carried out enormously, specifically the send and retrieve function to ensure it works without errors.
+* Database testing was carried out enormously, specifically the send and retrieve function to ensure it works without errors. Every function was tested in every possible user scenario, and order that a function could be done and at various speeds. For example, adding and removing from the database within a very short period of time, but all worked without error and the sites user experience has no delays with the backend.
 
 # Deployment
 
