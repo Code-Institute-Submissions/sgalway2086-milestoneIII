@@ -179,7 +179,7 @@ All the HTML was run through the w3c validator, without showing any errors unrel
 
 The CSS passed without issue, and was formatted using a formatter
 
-![CSS Validation](/documentation/wireframes/validatedcss.png "CSS Validation")
+![CSS Validation](/documentation/validatedcss.png "CSS Validation")
 
 ## Python Validation
 
