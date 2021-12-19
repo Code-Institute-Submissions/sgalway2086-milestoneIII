@@ -157,18 +157,24 @@
 
 ## Returning user
 
-* The log in function is available right from when the site is accessed, and recent sites are on the frong page leading to giving a returning user new content to enjoy
+* The log in function is available right from when the site is accessed, and recent sites are on the front page leading to giving a returning user new content to enjoy, thus giving the best engagement to a returning user who has an idea of what the site is about without the need to navigate unnecessary menus. This creates a very streamlined and easy experience for the returning user.
 
-* The ability to edit, delete, add and search websites is very fun to explore for a user and is rather enticing
+* The ability to edit, delete, add and search recipes on the website is of enjoyment to a user and creates a lot of engagement due to access to previously made content, and other users content.
 
 
 ## Site owner
 
 * For a site owner, having the brand of cooking utensils named on the front page was paramount. Nestling it within the description, with a rather upbeat tone creates a positive view of the company and the links to the social media site are sure to attract new users.
 
+* A recommendation, and a competition listed on the front page means that people will be enticed by the brand of cooking tools, thus creating business and being satisfying to the site owner.
+
+* A high quality, enjoyable site to use that will create both a positive reputation and name for it and the tools and company in question that are being promoted.
+
 ## Mobile User
 
 * For a mobile user, the site can be navigated very smoothly and with a small collapsable navbar, which proves to be very useful for navigation, and all the sites functions remain perfecty operational and aesthetically pleasing on mobile.
+
+* The site is completely useable for a mobile user without any concessions and all forms and uses of the desktop site are accessable on mobile.
 
 
 # Testing
