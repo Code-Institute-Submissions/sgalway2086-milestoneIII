@@ -4,24 +4,33 @@
  
 ## User Stories
  
-For a new user
+### For a new user
 
 1. An easy to learn layout, and access to recipes easily and quickly
+
 2. Access to creating an account and easy navigation through the site
+
+3. Strong front page that explains what the purpose of the site is
  
-As a returning user
+### As a returning user
  
-1. To be able to see new additions to the site
+1. To be able to see new additions to the site and explore the recipes. The use of an account can create a more engaging experience to a returning user, as content can be saved
+
 2. Access to delete or edit previous recipes they have created
 
-For a site owner
+### For a site owner
 
 1. Promote a brand of cooking tools
+
 2. Attract those looking for cooking tools and possibly market to those unsure
+
+3. Create a positive reputation based on a high quality site and experience
  
-For a mobile user
+### For a mobile user
 
 1. Similar to a new and previous user but with the need of a clean, mobile friendly layout and ability to perform all functions (reading, submitting, editing, searching etc)
+
+2. An uncompromised user experience that always remains simple to understand, for new and returning mobile users.
 
 # Design
  
