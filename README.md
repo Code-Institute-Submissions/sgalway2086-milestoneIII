@@ -148,9 +148,11 @@
 
 ## New User
 
-* A new user will be presented right away with a description of the site, the purpose and has access to start exploring the contents of the site immediately in the large nav bar.
+* A new user will be presented right away with a description of the site, the purpose and has access to start exploring the contents of the site immediately in the large nav bar. The layout is simple and intuitive and very clearly labeled, with a burger icon on mobile which is universally recognisable to mobile users. 
 
-* All functions are easy to understand due to the clear, and visible icon usage on the page and descriptions present for all parts
+* All functions are easy to understand due to the clear, and visible icon usage on the page and descriptions present for all parts.
+
+* The option to interact with the site with an account are very present within the bar, and with reference accross the site it means the user will know they have this option immediately
 
 
 ## Returning user
@@ -179,7 +181,7 @@ All the HTML was run through the w3c validator, without showing any errors unrel
 
 The CSS passed without issue, and was formatted using a formatter
 
-![CSS Validation](/documentation/validatedcss.png "CSS Validation")
+![CSS Validation](/documentation/validatedcss.PNG "CSS Validation")
 
 ## Python Validation
 
