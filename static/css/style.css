@@ -452,4 +452,8 @@
          border-radius:12px;
     }
 }
- 
+ @media screen and (max-width: 392px){
+    #randomRecipe{
+         margin-top: 10px;
+    }
+}
