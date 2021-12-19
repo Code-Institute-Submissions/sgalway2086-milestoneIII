@@ -83,6 +83,13 @@
 ## Login
 ![Login](/documentation/wireframe7.png "Login")
 
+# Database Model
+
+![Database Model](/documentation/databasemodel.png "Database Model")
+
+## Database Information
+
+* The recipe section of the database is divided into three categories. The first category is one the user has no interaction with. The second being one the user can interact with, and the third one the user interacts with, but undergoes modification when submitted/retrieved/edited. The choice to go with the third model, with the use of {space} to seperate the steps and ingredients was one of practicality, with this essentially allowing the user a dynamic number of steps. If it was a set list, of for example 10 in the model, it would essentially restrict users to 10 or below steps, and if one was to try make this less of a problem, adding multiple areas of the database to accomidate this would become cumbersome very quickly. The {space} system to break apart steps and ingredients works on both a practical, and user level due to it allowing more freedom to add to the site without constraints.
 
 # Technology Used
 
