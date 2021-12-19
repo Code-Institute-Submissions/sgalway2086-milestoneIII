@@ -236,6 +236,9 @@
  .submitInput{
      width: 50%;
 }
+#message-section{
+     margin-left: 10px;
+}
  @media screen and (max-width: 1000px){
      nav a{
          margin-left: 16px;
