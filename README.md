@@ -87,37 +87,37 @@
 # Technology Used
 
 ## Google Fonts
-* Google Fonts "Dancing Script" and “Kaisei Tokumin” font were used for this project
+* Google Fonts "Dancing Script" and “Kaisei Tokumin” font were used for this project. Dancing Script made a very elegant looking font for the title and header, that creates a very sophisticated, fitting look for a recipe site and Kaisei Tokumin made a very strong text for the body due to its easy readability and strong aesthetics.
 
 ## FontAwesome
-* Various FontAwesome logos were utilised to create a more clean user interface
+* Various FontAwesome logos were utilised to create a more clean user interface and to give representation of certain functions on the cite, for example a minus symbal on the submit recipe page to remove a step
 
 ## Gitpod
-* The version control on Gitpod was used to create commits and version control the project
+* The version control on Gitpod was used to create commits and version control the project and was used as the primary IDE for the project.
 
 ## Github
-* Github was used to store all versions commited from Gitpod
+* Github was used to store all versions committed from Gitpod and to manage the Gitpod account
 
 ## Heroku
-* Heroku was used to create an app and make the website live
+* Heroku was used to create an app and make the website live, linking to gitpod and allowing the use of automatic deployments when a commit is made from gitpod.
 
 ## MongoDB
-* MongoDB was used to create a database and two collections for the site
+* MongoDB was used to create a database and two collections for the site, one for recipes and the other for users. This is automatically used to store these respective elements when the user interacts with the website
 
 ## JQuery
-* JQuery was used to write custom javascript files for the submission page of the site
+* JQuery was used to write custom javascript files for the submission page of the site due to its flexible syntax and ability to simplify certain functions in the javascript language
 
 ## Pymongo
-* Pymongo and its technologies (specifically werkzeug) were used to create the websites ability to interact with the database
+* Pymongo and its technologies (specifically werkzeug) were used to create the websites ability to interact with the database. It created a smooth and simple interacting between the front and backend and was essential to ensure that everything worked correctly.
 
 ## Jinja
-* Jinja was used for the creation of templates within the project
+* Jinja was used for the creation of templates within the project, and for looping through database information, making the site vastly more dynamic. The ability to vary a sites contents based on content from front or back end makes it a very powerful tool for creating a dynamic data interaction for a user
 
 ## Microsoft Paint
-* Microsoft Paint was used to create various wireframes of different sizes of the site
+* Microsoft Paint was used to create various wireframes of different sizes of the site, using it as a reference for the styling and creating of the websites pages.
 
 ## Favicon.cc
-* This site was used to make the favicon
+* This site was used to make the favicon for the site
 
 # Features
 
