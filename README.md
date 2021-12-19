@@ -185,21 +185,6 @@ The CSS passed without issue, and was formatted using a formatter
 
 All code was run through and linted carefully to be pep8 compliant and without error, specific attention was paid to ensure that nothing was at the incorrect indentation to prevent any code related errors
 
-# Further Testing
-
-## Technical Tests
-
-* During the design and testing process, every function and possible operation was tested multiple times (including in various orders in order to ensure that no possible operations could cause errors within the system). This was paramount as sometimes it can happen that a certain combination to break the site, necessating being thorough with this process.
-
-* Various tests were carried out with a large variety of devices, to ensure compatability to the highest level possible. Two computers, and three mobile phones were used to test this website and throughly test its usability.
-
-* Multiple browsers were also used during the testing process. Google Chrome, Safari, Samsung Internet and firefox were tested.
-
-* Placement of buttons and options were examined thoroughly, to ensure they all work and do not cause any issues with navigating the files.
-
-* Database testing was carried out enormously, specifically the send and retrieve function to ensure it works without errors. Every function was tested in every possible user scenario, and order that a function could be done and at various speeds. For example, adding and removing from the database within a very short period of time, but all worked without error and the sites user experience has no delays with the backend.
-
-* Responsiveness was tested heavily with development tools, as to ensure that not a single screen size has any issues with displaying the site. This was paramount to ensure that nothing would be missed, as it could be if only testing on devices with specific screen sizes
 
 # Deployment
 
@@ -241,7 +226,21 @@ All code was run through and linted carefully to be pep8 compliant and without e
 
 19. Use the terminal and install and then deploy to the heroku master branch
 
+# Further Testing
 
+## Technical Tests
+
+* During the design and testing process, every function and possible operation was tested multiple times (including in various orders in order to ensure that no possible operations could cause errors within the system). This was paramount as sometimes it can happen that a certain combination to break the site, necessating being thorough with this process.
+
+* Various tests were carried out with a large variety of devices, to ensure compatability to the highest level possible. Two computers, and three mobile phones were used to test this website and throughly test its usability.
+
+* Multiple browsers were also used during the testing process. Google Chrome, Safari, Samsung Internet and firefox were tested.
+
+* Placement of buttons and options were examined thoroughly, to ensure they all work and do not cause any issues with navigating the files.
+
+* Database testing was carried out enormously, specifically the send and retrieve function to ensure it works without errors. Every function was tested in every possible user scenario, and order that a function could be done and at various speeds. For example, adding and removing from the database within a very short period of time, but all worked without error and the sites user experience has no delays with the backend.
+
+* Responsiveness was tested heavily with development tools, as to ensure that not a single screen size has any issues with displaying the site. This was paramount to ensure that nothing would be missed, as it could be if only testing on devices with specific screen sizes
 
 ## Bugs Fixed
 1. There was originally a bug in which the string created by the submission form would not generate correctly and removed too little of the string leaving undesirable characters (specifically a ' } ') from the end of the {space} string that was removed. This was fixed simply by increasing the removal by 1 and then applying this to other parts of the string removal.
