@@ -91,6 +91,8 @@
 
 * The recipe section of the database is divided into three categories. The first category is one the user has no interaction with. The second being one the user can interact with, and the third one the user interacts with, but undergoes modification when submitted/retrieved/edited. The choice to go with the third model, with the use of {space} to seperate the steps and ingredients was one of practicality, with this essentially allowing the user a dynamic number of steps. If it was a set list, of for example 10 in the model, it would essentially restrict users to 10 or below steps, and if one was to try make this less of a problem, adding multiple areas of the database to accomidate this would become cumbersome very quickly. The {space} system to break apart steps and ingredients works on both a practical, and user level due to it allowing more freedom to add to the site without constraints.
 
+* The account model is based on user information moreso, so it uses a MongoDB generated _id, and then a user created username and password. The password is hashed and hidden with werkzeug security features to prevent the possibility of being exposed.
+
 # Technology Used
 
 ## Google Fonts
@@ -125,6 +127,9 @@
 
 ## Favicon.cc
 * This site was used to make the favicon for the site
+
+## Werkzeug
+* Security features from Werkzeug were used to ensure security for user passwords, and increase the overall security of the site.
 
 # Features
 
