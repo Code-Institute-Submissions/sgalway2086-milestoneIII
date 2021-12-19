@@ -225,11 +225,10 @@
      margin-top:20%;
 }
  .loginInputs{
-     border-style: none;
      width: 40%;
      height: 24px;
      border-radius:12px;
-     border-width: 2px;
+     border: 2px solid #0f0f0f
 }
  .submitInputSmaller{
      width: 50%;
