@@ -228,6 +228,7 @@
      width: 40%;
      height: 24px;
      border-radius:12px;
+     border-width: 2px;
 }
  .submitInputSmaller{
      width: 50%;
