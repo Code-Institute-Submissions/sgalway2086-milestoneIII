@@ -239,6 +239,9 @@
 #message-section{
      margin-left: 10px;
 }
+.remove_field{
+     color: #0f0f0f;
+}
 .account-button{
      background-color:#37a6e1;
      border: none;
