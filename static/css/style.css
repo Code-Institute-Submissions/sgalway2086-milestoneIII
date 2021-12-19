@@ -242,6 +242,9 @@
 .remove_field{
      color: #0f0f0f;
 }
+.remove_field:hover{
+    color: #ff1a1a;
+}
 .account-button{
      background-color:#37a6e1;
      border: none;
