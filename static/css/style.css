@@ -240,6 +240,17 @@
 #message-section{
      margin-left: 10px;
 }
+.account-button{
+     background-color:#37a6e1;
+     border: none;
+     color: white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+}
+
  @media screen and (max-width: 1000px){
      nav a{
          margin-left: 16px;
